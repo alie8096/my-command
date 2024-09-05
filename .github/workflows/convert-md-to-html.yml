@@ -67,12 +67,12 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install markdown2
+      run: pip install markdown
 
     - name: Convert Markdown to HTML using Python
       run: |
         python - <<EOF
-        import markdown2
+        import markdown
         with open('README.md', 'r') as m:
           md = m.read()
         # md = open('README.md', 'r').read()
