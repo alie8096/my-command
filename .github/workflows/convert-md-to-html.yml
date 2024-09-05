@@ -78,18 +78,17 @@ jobs:
         from pygments.formatters import HtmlFormatter
         import re
         from slugify import slugify
-        
-        
+
         # Function to highlight code blocks
         def highlight_code(code, language):
             try:
                 lexer = get_lexer_by_name(language, stripall=True)
             except Exception:
                 lexer = TextLexer(stripall=True)
-        
+
             formatter = HtmlFormatter(cssclass="code-box", style="colorful")
             highlighted_code = highlight(code, lexer, formatter)
-        
+
             code_info = f"""
                 <div class="code-info">
                     <button class="copy-icon">
@@ -99,37 +98,36 @@ jobs:
                     <span class="language">{language}</span>
                 </div>
             """
-        
+
             highlighted_code = re.sub(r'<div class="code-box">', f'<div class="code-box">{code_info}', highlighted_code)
             return highlighted_code
-        
-        
+
         # Function to convert markdown to HTML
         def markdown_to_html(md_text):
-            # Regex to match code blocks with optional indentation
-            code_block_re = re.compile(r'```(\w*)\s*(.*?)\s*```', re.DOTALL | re.MULTILINE)
-        
+            # Regex to match code blocks
+            code_block_re = re.compile(r'```(\w*)\n(.*?)\n```', re.DOTALL | re.MULTILINE)
+
             def code_block_replacer(match):
-                language = match.group(1)
+                language = match.group(1) if match.group(1) else "text"  # Ensure a default language
                 code = match.group(2).rstrip()  # Remove trailing whitespace from code
                 return highlight_code(code, language)
-        
+
             # Convert code blocks
             html_with_highlighted_code = code_block_re.sub(code_block_replacer, md_text)
-        
+
             # Convert markdown to HTML
             html_content = markdown.markdown(html_with_highlighted_code, extensions=['fenced_code', 'codehilite', 'tables'])
-        
+
             return html_content
-        
-        
-        
-        
+
+        # Read markdown content
         with open('README.md', 'r', encoding='utf-8') as file:
             md_text = file.read()
-        
+
+        # Convert markdown to HTML
         html_output = markdown_to_html(md_text)
-        
+
+        # Template for the final HTML
         html_template = f"""
         <!DOCTYPE html>
         <html lang="fa" dir="rtl">
@@ -139,9 +137,9 @@ jobs:
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Command e-booklet">
         <meta name="author" content="Mahdi Rezaie, Ali Ebrahimian">
-        
+
         <link rel="stylesheet" type="text/css" href="statics/style.css">
-        
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         </head>
         <body>
@@ -152,13 +150,13 @@ jobs:
                 </div>
             </div>
         </main>
-        
-        
+
         <script src="statics/app.js"></script>
         </body>
         </html>
-            """
-        
+        """
+
+        # Write the output to an HTML file
         with open('index.html', 'w', encoding='utf-8') as file:
             file.write(html_template)
         EOF
