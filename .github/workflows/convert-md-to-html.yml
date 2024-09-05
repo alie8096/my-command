@@ -1,51 +1,3 @@
-# name: Convert Markdown to HTML
-
-# on:
-#   push:
-#     branches:
-#       - main
-
-# jobs:
-#   build:
-#     runs-on: ubuntu-latest
-
-#     steps:
-#     - name: Checkout code
-#       uses: actions/checkout@v3
-
-#     - name: Set up Pandoc
-#       run: sudo apt-get install pandoc
-
-#     - name: Add custom template
-#       run: |
-#         echo '<!DOCTYPE html>
-#         <html lang="en">
-#         <head>
-#             <meta charset="UTF-8">
-#             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-#             <title>${title}</title>
-#             <link rel="stylesheet" href="statics/style.css">
-#         </head>
-#         <body>
-#             $body$
-#             <script src="statics/app.js"></script>
-#         </body>
-#         </html>' > template.html
-
-#     - name: Convert Markdown to HTML with template
-#       run: pandoc -s -o index.html README.md --template=template.html
-
-#     - name: Commit and push changes to main branch
-#       run: |
-#         git config --global user.name "GitHub Actions"
-#         git config --global user.email "actions@github.com"
-#         git add index.html
-#         git commit -m "Update HTML file with custom template"
-#         git pull origin main --rebase
-#         git push origin main
-#       env:
-#         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
 name: Convert Markdown to HTML
 
 on:
@@ -58,23 +10,39 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # گام 1: دریافت فایل‌های ریپازیتوری
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      # گام 2: نصب Pandoc برای تبدیل Markdown به HTML
-      - name: Install Pandoc
-        run: sudo apt-get update && sudo apt-get install -y pandoc
+    - name: Set up Pandoc
+      run: sudo apt-get install pandoc
 
-      # گام 3: تبدیل فایل README.md به HTML با استفاده از قالب سفارشی
-      - name: Convert Markdown to HTML
-        run: |
-          pandoc README.md -o index.html --template=custom-template.html
+    - name: Add custom template
+      run: |
+        echo '<!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${title}</title>
+            <link rel="stylesheet" href="statics/style.css">
+        </head>
+        <body>
+            $body$
+            <script src="statics/app.js"></script>
+        </body>
+        </html>' > template.html
 
-      # گام 4: انتشار فایل HTML در GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+    - name: Convert Markdown to HTML with template
+      run: pandoc -s -o index.html README.md --template=template.html
+
+    - name: Commit and push changes to main branch
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+        git add index.html
+        git commit -m "Update HTML file with custom template"
+        git pull origin main --rebase
+        git push origin main
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
