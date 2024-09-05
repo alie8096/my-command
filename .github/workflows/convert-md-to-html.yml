@@ -47,7 +47,6 @@
 #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
-
 name: Convert Markdown to HTML
 
 on:
@@ -73,9 +72,9 @@ jobs:
 
     - name: Convert Markdown to HTML using Python
       run: |
-        python -c "
+        python - <<EOF
 import markdown
-md = open('README.md', 'r').read()
+md = open('../../README.md', 'r').read()
 html_content = markdown.markdown(md)
 custom_html = f'''
 <!DOCTYPE html>
@@ -96,7 +95,7 @@ custom_html = f'''
 '''
 with open('index.html', 'w') as f:
     f.write(custom_html)
-        "
+EOF
 
     - name: Commit HTML file
       run: |
