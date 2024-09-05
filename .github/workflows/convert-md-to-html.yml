@@ -46,7 +46,6 @@
 #       env:
 #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-
 name: Convert Markdown to HTML
 
 on:
@@ -68,34 +67,36 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install markdown
+      run: pip install markdown2
 
     - name: Convert Markdown to HTML using Python
       run: |
         python - <<EOF
-import markdown
-md = open('../../README.md', 'r').read()
-html_content = markdown.markdown(md)
-custom_html = f'''
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>my command</title>
-  <link rel="stylesheet" href="statics/style.css">
-</head>
-<body>
-  <div class='content'>
-    {html_content}
-  </div>
-  <script src='statics/app.js'></script>
-</body>
-</html>
-'''
-with open('index.html', 'w') as f:
-    f.write(custom_html)
-EOF
+        import markdown2
+        with open('README.md, 'r') as m:
+          md = m.read()
+        # md = open('README.md', 'r').read()
+        html_content = markdown.markdown(md)
+        custom_html = f'''
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>my command</title>
+          <link rel="stylesheet" href="statics/style.css">
+        </head>
+        <body>
+          <div class='content'>
+            {html_content}
+          </div>
+          <script src='statics/app.js'></script>
+        </body>
+        </html>
+        '''
+        with open('index.html', 'w') as f:
+            f.write(custom_html)
+        EOF
 
     - name: Commit HTML file
       run: |
