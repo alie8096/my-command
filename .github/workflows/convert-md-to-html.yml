@@ -73,7 +73,7 @@ jobs:
       run: |
         python - <<EOF
         import markdown2
-        with open('README.md, 'r') as m:
+        with open('README.md', 'r') as m:
           md = m.read()
         # md = open('README.md', 'r').read()
         html_content = markdown.markdown(md)
