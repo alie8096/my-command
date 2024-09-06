@@ -21,7 +21,7 @@ codeBlocks.forEach(block => {
 
 document.querySelectorAll('.copy-icon').forEach(icon => {
     icon.addEventListener('click', () => {
-        const codeBox = icon.closest('.code-box');
+        const codeBox = icon.closest('.codehilite');
         const codeContent = codeBox.querySelector('pre').innerText;
         copyToClipboard(codeContent);
         const originalText = icon.innerHTML;
