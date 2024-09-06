@@ -1,0 +1,991 @@
+@charset "utf-8";
+
+
+:root {
+    --code-BG: #021028;
+    --comment-color: #B18EB1;
+    --number-color: #ff4800;
+    --names-color: #61AEEE;
+    --keyword-color: #F92672;
+    --True-False: #56B6C2;
+    --strings: #98c379;
+}
+
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+body,
+html {
+    font-family: 'Vazir', sans-serif;
+    height: 100%;
+    margin: 0;
+}
+
+/* --------------------- These items affect the entire project --------------------- */
+p {
+    font-weight: 500;
+}
+
+/* ----------------------- block quote ------------------------ */
+blockquote:has(span) {
+    direction: ltr;
+    border-radius: 5px;
+    border-inline-width: 5px;
+    margin: 20px 0;
+    padding: 5px 10px;
+}
+blockquote, blockquote:has(blockquote), blockquote:has(.rtl-text) {
+    direction: rtl;
+    font-style: italic;
+    border-inline-start: 7px solid #00b4ff;
+    border-radius: 10px;
+    margin: 30px 0;
+    padding: 5px 20px;
+    background: #f3faff;
+}
+
+/* ----------------------------------------------- */
+span.en-text {
+    display: inline-block;
+    direction: ltr;
+}
+
+span.rtl-text {
+    display: inline-block;
+    direction: rtl;
+}
+
+@media (max-width:500px){
+    blockquote {
+        font-size: 0.9rem;
+    }
+
+    h5 {
+        margin: 1rem 0;
+    }
+}
+
+/* --------------------------------------------------------------------------------- */
+
+center *:not(p) {
+    background-color: antiquewhite;
+    padding: 10px 15px;
+    border-radius: 12px;
+}
+
+/* -------------------------------- for season zero -------------------------------- */
+li {
+    margin-bottom: 7px;
+}
+
+li code {
+    display: inline-block;
+    direction: ltr;
+}
+
+/* ----------------------------------------------------------------------------------------------- */
+
+/* container */
+.container {
+    height: calc(100% - 50px);
+}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* content */
+.content {
+    padding: 20px 75px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: all 0.5s ease-in-out;
+}
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* Media Queries */
+@media (min-width: 1200px) {
+    nav.menu {
+        padding: 15px 25px;
+    }
+
+    .icon {
+        font-size: 2rem;
+        /* 37px */
+    }
+
+    .container {
+        margin-top: 60px;
+    }
+
+    .content.active {
+        margin-right: calc(23vw - 50px);
+        padding: 20px;
+        overflow: auto;
+    }
+
+    .menu-list {
+        width: calc(23vw - 50px);
+        right: calc(-23vw + 50px);
+    }
+
+    .menu-list.active {
+        top: 62px;
+        bottom: 0;
+        transform: translateX(calc(-23vw + 50px));
+    }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+    nav.menu {
+        padding: 15px 25px;
+    }
+
+    .icon {
+        font-size: 2.625rem;
+        /* 42px */
+    }
+
+    .container {
+        margin-top: 70px;
+    }
+
+    .menu-list {
+        width: calc(35vw - 50px);
+        right: calc(-35vw + 50px);
+    }
+
+    .menu-list.active {
+        top: 65px;
+        bottom: 0;
+        transform: translateX(calc(-35vw + 50px));
+    }
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+    nav.menu {
+        padding: 15px 25px;
+    }
+
+    .icon {
+        font-size: 2.625rem;
+        /* 42px */
+    }
+
+    .container {
+        margin-top: 70px;
+    }
+
+    .menu-list {
+        width: 40vw;
+        right: -40vw;
+    }
+
+    .menu-list.active {
+        top: 80px;
+        bottom: 0;
+        transform: translateX(-40vw);
+    }
+
+    .content {
+        padding: 20px 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav.menu {
+        padding: 15px 25px;
+    }
+
+    .icon {
+        font-size: 1.9rem;
+    }
+
+    .container {
+        margin-top: 40px;
+    }
+
+    .content {
+        padding: 20px 30px;
+    }
+
+    .menu-list {
+        width: 70vw;
+        right: -70vw;
+    }
+
+    .menu-list.active {
+        top: 57px;
+        bottom: 0;
+        transform: translateX(-70vw);
+    }
+}
+/* -------------------------------------------------------------------------------------------------------- */
+
+
+/* Style 'code box' and structure inside it  */
+.codehilite {
+    margin-bottom: 20px;
+    text-align: left;
+    direction: ltr;
+    background-color: #00122b;
+    border-radius: 12px;
+}
+
+pre {
+    margin: 0;
+    padding: 18px 25px;
+    overflow-x: auto;
+    color: #ABB2BF;
+    font-family: "Consolas", monospace;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    font-weight: 400;
+}
+
+.codehilite pre span {
+    color: #ABB2BF;
+    font-family: "Consolas", monospace;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    font-weight: 400;
+}
+
+
+
+
+p:has(> code) {
+    direction: ltr;
+    text-align: left;
+}
+
+code {
+    background-color: #ffc400;
+    padding: 5px 12px;
+    border-radius: 15px;
+
+    font-family: "Consolas", monospace;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+
+td.linenos .normal {
+    color: inherit;
+    background-color: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+span.linenos {
+    color: inherit;
+    background-color: transparent;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+td.linenos .special {
+    color: #000000;
+    background-color: #ffffc0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+span.linenos.special {
+    color: #000000;
+    background-color: #ffffc0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.codehilite .hll {
+    background-color: #ffffcc
+}
+
+.codehilite {
+    background: #021028;
+}
+
+/* ---------------------------------------------------------- */
+/* Comment */
+.codehilite .c {
+    color: #3D7B7B;
+    font-style: italic
+}
+
+/* Error */
+.codehilite .err {
+    border: 1px solid #FF0000
+}
+
+/* Keyword */
+.codehilite .k {
+    color: #F92672;
+    font-weight: bold
+}
+
+/* Operator */
+.codehilite .o {
+    color: #ff7700
+}
+
+/* Comment.Hashbang */
+.codehilite .ch {
+    color: #3D7B7B;
+    font-style: italic
+}
+
+/* Comment.Multiline */
+.codehilite .cm {
+    color: #3D7B7B;
+    font-style: italic
+}
+
+/* Comment.Preproc */
+.codehilite .cp {
+    color: #9C6500
+}
+
+/* Comment.PreprocFile */
+.codehilite .cpf {
+    color: #3D7B7B;
+    font-style: italic
+}
+
+/* Comment.Single */
+.codehilite .c1 {
+    color: #B18EB1;
+    font-style: italic
+}
+
+/* Comment.Special */
+.codehilite .cs {
+    color: #3D7B7B;
+    font-style: italic
+}
+
+/* Generic.Deleted */
+.codehilite .gd {
+    color: #A00000
+}
+
+/* Generic.Emph */
+.codehilite .ge {
+    font-style: italic
+}
+
+/* Generic.EmphStrong */
+.codehilite .ges {
+    font-weight: bold;
+    font-style: italic
+}
+
+/* Generic.Error */
+.codehilite .gr {
+    color: #E40000
+}
+
+/* Generic.Heading */
+.codehilite .gh {
+    color: #000080;
+    font-weight: bold
+}
+
+/* Generic.Inserted */
+.codehilite .gi {
+    color: #008400
+}
+
+/* Generic.Output */
+.codehilite .go {
+    color: #717171
+}
+
+/* Generic.Prompt */
+.codehilite .gp {
+    color: #000080;
+    font-weight: bold
+}
+
+/* Generic.Strong */
+.codehilite .gs {
+    font-weight: bold
+}
+
+/* Generic.Subheading */
+.codehilite .gu {
+    color: #800080;
+    font-weight: bold
+}
+
+/* Generic.Traceback */
+.codehilite .gt {
+    color: #0044DD
+}
+
+/* Keyword.Constant */
+.codehilite .kc {
+    color: #56B6C2;
+    font-weight: bold
+}
+
+/* Keyword.Declaration */
+.codehilite .kd {
+    color: #008000;
+    font-weight: bold
+}
+
+/* Keyword.Namespace */
+.codehilite .kn {
+    color: #F92672;
+    font-weight: bold
+}
+
+/* Keyword.Pseudo */
+.codehilite .kp {
+    color: #008000
+}
+
+/* Keyword.Reserved */
+.codehilite .kr {
+    color: #008000;
+    font-weight: bold
+}
+
+/* Keyword.Type */
+.codehilite .kt {
+    color: #B00040
+}
+
+/* Literal.Number */
+.codehilite .m {
+    color: #666666
+}
+
+/* Literal.String */
+.codehilite .s {
+    color: #BA2121
+}
+
+/* Name.Attribute */
+.codehilite .na {
+    color: #687822
+}
+
+/* Name.Builtin */
+.codehilite .nb {
+    color: #008000
+}
+
+/* Name.Class */
+.codehilite .nc {
+    color: #61AEEE;
+    font-weight: bold
+}
+
+/* Name.Constant */
+.codehilite .no {
+    color: #880000
+}
+
+/* Name.Decorator */
+.codehilite .nd {
+    color: #AA22FF
+}
+
+/* Name.Entity */
+.codehilite .ni {
+    color: #717171;
+    font-weight: bold
+}
+
+/* Name.Exception */
+.codehilite .ne {
+    color: #CB3F38;
+    font-weight: bold
+}
+
+/* Name.Function */
+.codehilite .nf {
+    color: #61AEEE
+}
+
+/* Name.Label */
+.codehilite .nl {
+    color: #767600
+}
+
+/* Name.Namespace */
+.codehilite .nn {
+    color: #61AEEE;
+    font-weight: bold
+}
+
+/* Name.Tag */
+.codehilite .nt {
+    color: #008000;
+    font-weight: bold
+}
+
+/* Name.Variable */
+.codehilite .nv {
+    color: #eaff00
+}
+
+/* Operator.Word */
+.codehilite .ow {
+    color: #AA22FF;
+    font-weight: bold
+}
+
+/* Text.Whitespace */
+.codehilite .w {
+    color: #bbbbbb
+}
+
+/* Literal.Number.Bin */
+.codehilite .mb {
+    color: #666666
+}
+
+/* Literal.Number.Float */
+.codehilite .mf {
+    color: #666666
+}
+
+/* Literal.Number.Hex */
+.codehilite .mh {
+    color: #666666
+}
+
+/* Literal.Number.Integer */
+.codehilite .mi {
+    color: #00ff91
+}
+
+/* Literal.Number.Oct */
+.codehilite .mo {
+    color: #666666
+}
+
+/* Literal.String.Affix */
+.codehilite .sa {
+    color: #BA2121
+}
+
+/* Literal.String.Backtick */
+.codehilite .sb {
+    color: #BA2121
+}
+
+/* Literal.String.Char */
+.codehilite .sc {
+    color: #BA2121
+}
+
+/* Literal.String.Delimiter */
+.codehilite .dl {
+    color: #BA2121
+}
+
+/* Literal.String.Doc */
+.codehilite .sd {
+    color: #BA2121;
+    font-style: italic
+}
+
+/* Literal.String.Double */
+.codehilite .s2 {
+    color: #00bdff
+}
+
+/* Literal.String.Escape */
+.codehilite .se {
+    color: #AA5D1F;
+    font-weight: bold
+}
+
+/* Literal.String.Heredoc */
+.codehilite .sh {
+    color: #BA2121
+}
+
+/* Literal.String.Interpol */
+.codehilite .si {
+    color: #A45A77;
+    font-weight: bold
+}
+
+/* Literal.String.Other */
+.codehilite .sx {
+    color: #008000
+}
+
+/* Literal.String.Regex */
+.codehilite .sr {
+    color: #A45A77
+}
+
+/* Literal.String.Single */
+.codehilite .s1 {
+    color: #ceff00
+}
+
+/* Literal.String.Symbol */
+.codehilite .ss {
+    color: #19177C
+}
+
+/* Name.Builtin.Pseudo */
+.codehilite .bp {
+    color: #c300ff
+}
+
+/* Name.Function.Magic */
+.codehilite .fm {
+    color: #61AEEE
+}
+
+/* Name.Variable.Class */
+.codehilite .vc {
+    color: #19177C
+}
+
+/* Name.Variable.Global */
+.codehilite .vg {
+    color: #19177C
+}
+
+/* Name.Variable.Instance */
+.codehilite .vi {
+    color: #19177C
+}
+
+/* Name.Variable.Magic */
+.codehilite .vm {
+    color: #7bff00
+}
+
+/* Literal.Number.Integer.Long */
+.codehilite .il {
+    color: #666666
+}
+
+/* symbols(., *, (),... */
+.codehilite .p {
+    color: #ff8800
+}
+
+
+@media (max-width:450px) {
+    code {
+        font-size: 0.8rem;
+    }
+
+}
+/* ----------------------------------------------------------------------------------------------------- */
+
+/* Styling the 'div' tag that holds the 'copy code' structure */
+.language {
+    font-size: 0.875rem;
+}
+
+.copy-icon {
+    cursor: pointer;
+    color: #e0e0e0;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.code-info {
+    /* background-color: #505050; */
+    background-color: #192a45;
+    border-radius: 12px 12px 0 0;
+    padding: 8px 16px;
+    color: #e0e0e0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* --------------------------------------------------------------------------------- */
+
+/* Base Table Styles */
+table {
+    margin-top: 25px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    direction: ltr;
+}
+
+table th,
+table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+
+/* Responsive Tables */
+@media (max-width: 600px){
+    table th, table td {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px){
+    table th, table td {
+        font-size: 0.8rem;
+    }
+}
+/* --------------------------------------------------------------------------------------------------- */
+
+/* Responsive Images */
+.img-zero {
+    margin: 20px 0;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+/* -------------------------------------------------------------------------------------------------- */
+
+
+/* List of contents */
+.toc {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px 25px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.toc h3 {
+    margin-top: 0;
+}
+
+.toc ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.toc ul li {
+    margin: 5px 0;
+}
+
+.toc ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.toc ul li a:hover {
+    text-decoration: underline;
+}
+/* ------------------------------------------------------------------------------------------------- */
+
+
+/* style for edit icon */
+.edit-icon {
+    text-decoration: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 50;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    width: 53px;
+    height: 53px;
+    background-color: #333333;
+}
+
+.edit-icon i {
+    color: white;
+    font-size: 1.4375rem;
+}
+/* --------------------------------------------------------------------------------------------------- */
+/* Style for Contact Us */
+.team-logo {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* ----------------------------------------------------------------- */
+
+h2.contact-us-text {
+    display: none;
+}
+
+h3 {
+    margin-bottom: 18px;
+}
+
+#contact-us>h3 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+/* ----------------------------------------------------------------- */
+
+.separate-line {
+    width: 95%;
+    height: 4px;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 20px;
+    background-color: #333;
+}
+
+/* ----------------------------------------------------------------- */
+#about-us * {
+    text-align: right;
+}
+
+/* ----------------------------------------------------------------- */
+.owners {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+
+.persons {
+    max-width: 400px;
+    min-width: 280px;
+    height: max-content;
+
+    margin-bottom: 50px;
+    padding: 0 30px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+/* ----------------------------------- */
+/* personal logo and its div */
+.personal-logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.personal-logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    object-position: center;
+}
+
+/* ----------------------------------- */
+.personal-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 500px;
+    height: 250px;
+}
+
+/* ----------------------------------- */
+.info-text p {
+    margin-bottom: 5px;
+    font-size: 0.89rem;
+}
+
+/* ----------------------------------- */
+.contact-author {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------------------------------------------------------------------- */
+
+@media (max-width:950px) {
+    .personal-logo {
+        width: 120px;
+        height: 120px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+}
+@media (max-width:450px) {
+    .persons {
+        padding: 0 15px;
+        padding-top: 15px;
+        padding-bottom: 25px;
+    }
+
+
+    .personal-logo {
+        width: 100px;
+        height: 100px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    }
+
+    .info-text p {
+        font-size: 0.82rem;
+    }
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* style for email icon */
+.email-icon {
+    text-decoration: none;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 50;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    width: 53px;
+    height: 53px;
+    background-color: #333333;
+}
+
+.email-icon i {
+    color: white;
+    font-size: 1.4375rem;
+}
