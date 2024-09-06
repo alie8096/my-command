@@ -67,7 +67,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install markdown pygments python-slugify
+      run: pip install markdown pygments python-slugify beautifulsoup4
 
     - name: Convert Markdown to HTML using Python
       run: |
@@ -76,6 +76,7 @@ jobs:
         from pygments import highlight
         from pygments.lexers import get_lexer_by_name, TextLexer
         from pygments.formatters import HtmlFormatter
+        from bs4 import BeautifulSoup
         import re
         from slugify import slugify
 
@@ -102,21 +103,55 @@ jobs:
             highlighted_code = re.sub(r'<div class="code-box">', f'<div class="code-box">{code_info}', highlighted_code)
             return highlighted_code
 
+        # Function to manually parse code blocks and highlight them
+        def parse_code_blocks(md_text):
+            lines = md_text.split('\n')
+            inside_code_block = False
+            language = ""
+            code_block = []
+            parsed_text = []
+
+            for line in lines:
+                if line.startswith("```") and not inside_code_block:
+                    # Start of a code block
+                    language = line[3:].strip()  # Extract language
+                    inside_code_block = True
+                    code_block = []
+                elif line.startswith("```") and inside_code_block:
+                    # End of a code block
+                    highlighted_code = highlight_code('\n'.join(code_block), language)
+                    parsed_text.append(highlighted_code)
+                    inside_code_block = False
+                elif inside_code_block:
+                    # Collect code block lines
+                    code_block.append(line)
+                else:
+                    # Normal markdown text
+                    parsed_text.append(line)
+
+            # If the last block was still inside code block
+            if inside_code_block:
+                parsed_text.append(highlight_code('\n'.join(code_block), language))
+
+            return '\n'.join(parsed_text)
+
+        # Function to add class to images
+        def add_class_to_images(html_content):
+            soup = BeautifulSoup(html_content, 'html.parser')
+            for img in soup.find_all('img'):
+                img['class'] = img.get('class', []) + ['edu-img']
+            return str(soup)
+
         # Function to convert markdown to HTML
         def markdown_to_html(md_text):
-            # Regex to match code blocks
-            code_block_re = re.compile(r'```(\w*)(.*?)```', re.DOTALL)
-
-            def code_block_replacer(match):
-                language = match.group(1) if match.group(1) else "text"  # Ensure a default language
-                code = match.group(2).rstrip()  # Remove trailing whitespace from code
-                return highlight_code(code, language)
-
-            # Convert code blocks
-            html_with_highlighted_code = code_block_re.sub(code_block_replacer, md_text)
+            # Parse code blocks without using regex
+            html_with_highlighted_code = parse_code_blocks(md_text)
 
             # Convert markdown to HTML
             html_content = markdown.markdown(html_with_highlighted_code, extensions=['fenced_code', 'codehilite', 'tables'])
+
+            # Modify img tags
+            html_content = add_class_to_images(html_content)
 
             return html_content
 
@@ -137,9 +172,7 @@ jobs:
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Command e-booklet">
         <meta name="author" content="Mahdi Rezaie, Ali Ebrahimian">
-
         <link rel="stylesheet" type="text/css" href="statics/style.css">
-
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         </head>
         <body>
@@ -150,7 +183,6 @@ jobs:
                 </div>
             </div>
         </main>
-
         <script src="statics/app.js"></script>
         </body>
         </html>
