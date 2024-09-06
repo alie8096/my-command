@@ -185,10 +185,10 @@ jobs:
         git add index.html
         if git diff-index --quiet HEAD --; then
           echo "No changes to commit"
+          exit 0  # Gracefully exit if there are no changes
         else
           git commit -m "Update HTML file"
           git push origin main
         fi
-
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
