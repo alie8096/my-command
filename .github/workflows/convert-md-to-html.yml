@@ -133,7 +133,9 @@ jobs:
             if inside_code_block:
                 parsed_text.append(highlight_code('\n'.join(code_block), language))
 
-            return '\n'.join(parsed_text)
+            # return '\n'.join(parsed_text)
+            highlighted_code = re.sub(r'<div class="code-box">', f'<div class="code-box">{code_info}', '\n'.join(parsed_text))
+            return highlighted_code
 
         # Function to add class to images
         def add_class_to_images(html_content):
