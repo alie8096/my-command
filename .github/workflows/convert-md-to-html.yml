@@ -113,29 +113,22 @@ jobs:
 
             for line in lines:
                 if line.startswith("```") and not inside_code_block:
-                    # Start of a code block
-                    language = line[3:].strip()  # Extract language
+                    language = line[3:].strip()
                     inside_code_block = True
                     code_block = []
                 elif line.startswith("```") and inside_code_block:
-                    # End of a code block
                     highlighted_code = highlight_code('\n'.join(code_block), language)
                     parsed_text.append(highlighted_code)
                     inside_code_block = False
                 elif inside_code_block:
-                    # Collect code block lines
                     code_block.append(line)
                 else:
-                    # Normal markdown text
                     parsed_text.append(line)
 
-            # If the last block was still inside code block
             if inside_code_block:
                 parsed_text.append(highlight_code('\n'.join(code_block), language))
 
-            # return '\n'.join(parsed_text)
-            highlighted_code = re.sub(r'<div class="code-box">', f'<div class="code-box">{code_info}', '\n'.join(parsed_text))
-            return highlighted_code
+            return '\n'.join(parsed_text)
 
         # Function to add class to images
         def add_class_to_images(html_content):
@@ -146,25 +139,16 @@ jobs:
 
         # Function to convert markdown to HTML
         def markdown_to_html(md_text):
-            # Parse code blocks without using regex
             html_with_highlighted_code = parse_code_blocks(md_text)
-
-            # Convert markdown to HTML
             html_content = markdown.markdown(html_with_highlighted_code, extensions=['fenced_code', 'codehilite', 'tables'])
-
-            # Modify img tags
             html_content = add_class_to_images(html_content)
-
             return html_content
 
-        # Read markdown content
         with open('README.md', 'r', encoding='utf-8') as file:
             md_text = file.read()
 
-        # Convert markdown to HTML
         html_output = markdown_to_html(md_text)
 
-        # Template for the final HTML
         html_template = f"""
         <!DOCTYPE html>
         <html lang="fa" dir="rtl">
@@ -190,7 +174,6 @@ jobs:
         </html>
         """
 
-        # Write the output to an HTML file
         with open('index.html', 'w', encoding='utf-8') as file:
             file.write(html_template)
         EOF
