@@ -87,7 +87,7 @@ jobs:
             except Exception:
                 lexer = TextLexer(stripall=True)
 
-            formatter = HtmlFormatter(cssclass="code-box", style="colorful")
+            formatter = HtmlFormatter(cssclass="codehilite", style="colorful")
             highlighted_code = highlight(code, lexer, formatter)
 
             code_info = f"""
@@ -100,7 +100,7 @@ jobs:
                 </div>
             """
 
-            highlighted_code = re.sub(r'<div class="codehilite">', f'<div class="code-box">{code_info}', highlighted_code)
+            highlighted_code = re.sub(r'<div class="codehilite">', f'<div class="codehilite">{code_info}', highlighted_code)
             return highlighted_code
 
         # Function to manually parse code blocks and highlight them
