@@ -151,7 +151,7 @@ jobs:
 
         html_template = f"""
         <!DOCTYPE html>
-        <html lang="fa" dir="rtl">
+        <html lang="en" dir="ltr">
         <head>
         <title>My Command</title>
         <meta charset="utf-8">
