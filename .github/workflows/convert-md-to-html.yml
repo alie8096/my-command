@@ -30,40 +30,45 @@ jobs:
         from pygments.formatters import HtmlFormatter
         from bs4 import BeautifulSoup
         import re
-        from slugify import slugify
-
-        # Function to highlight code blocks and add copy button and language
+        
+        # Function to highlight code blocks
+        
+        
         def highlight_code(code, language):
             try:
                 lexer = get_lexer_by_name(language, stripall=True)
             except Exception:
                 lexer = TextLexer(stripall=True)
-
+        
             formatter = HtmlFormatter(cssclass="codehilite", style="colorful")
             highlighted_code = highlight(code, lexer, formatter)
-
-            # Creating the code-info div with copy button and language
+        
+            # Define code-info HTML structure
             code_info = f"""
-                <div class="code-info">
-                    <button class="copy-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
-                        <span>Copy code</span>
-                    </button>
-                    <span class="language">{language}</span>
-                </div>
+            <div class="code-info">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+                <span class="language">{language}</span>
+            </div>
             """
-
-            # Wrapping the code and code-info divs in a parent code-box div
-            return f'<div class="code-box">{code_info}{highlighted_code}</div>'
-
-        # Function to parse markdown text and highlight code blocks
+        
+            # Insert code-info HTML inside highlighted code
+            highlighted_code = re.sub(r'<div class="codehilite">', f'<div class="codehilite">{
+                                      code_info}', highlighted_code)
+            return highlighted_code
+        
+        # Function to parse and highlight code blocks in Markdown
+        
+        
         def parse_code_blocks(md_text):
             lines = md_text.split('\n')
             inside_code_block = False
             language = ""
             code_block = []
             parsed_text = []
-
+        
             for line in lines:
                 if line.startswith("```") and not inside_code_block:
                     language = line[3:].strip()
@@ -77,34 +82,29 @@ jobs:
                     code_block.append(line)
                 else:
                     parsed_text.append(line)
-
+        
             if inside_code_block:
                 parsed_text.append(highlight_code('\n'.join(code_block), language))
-
+        
             return '\n'.join(parsed_text)
-
-        # Function to add class to images
-        def add_class_to_images(html_content):
-            soup = BeautifulSoup(html_content, 'html.parser')
-            for img in soup.find_all('img'):
-                img['class'] = img.get('class', []) + ['edu-img']
-            return str(soup)
-
-        # Function to convert markdown to HTML
+        
+        # Function to convert Markdown to HTML with code highlighting
+        
+        
         def markdown_to_html(md_text):
             html_with_highlighted_code = parse_code_blocks(md_text)
-            html_content = markdown.markdown(html_with_highlighted_code, extensions=['fenced_code', 'codehilite', 'tables'])
-            html_content = add_class_to_images(html_content)
+            html_content = markdown.markdown(html_with_highlighted_code, extensions=[
+                                             'fenced_code', 'codehilite', 'tables'])
             return html_content
-
-        # Read the README.md file
+        
+        
+        # Read and convert the README.md file
         with open('README.md', 'r', encoding='utf-8') as file:
             md_text = file.read()
-
-        # Convert the markdown to HTML
+        
         html_output = markdown_to_html(md_text)
-
-        # Template for the final HTML output
+        
+        # HTML template for the output
         html_template = f"""
         <!DOCTYPE html>
         <html lang="en" dir="ltr">
@@ -129,10 +129,11 @@ jobs:
         </body>
         </html>
         """
-
-        # Write the HTML output to a file
+        
+        # Save the final HTML output
         with open('index.html', 'w', encoding='utf-8') as file:
             file.write(html_template)
+
         EOF
 
     - name: Commit HTML file if there are changes
