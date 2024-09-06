@@ -178,14 +178,17 @@ jobs:
             file.write(html_template)
         EOF
 
-    - name: Commit HTML file
+    - name: Commit HTML file if there are changes
       run: |
         git config --global user.name "GitHub Actions"
         git config --global user.email "actions@github.com"
         git add index.html
-        # git status  # Check if there are changes to commit
-        git commit -m "Update HTML file" || echo "No changes to commit"
-        # git pull origin main --rebase
-        git push origin main
+        if git diff-index --quiet HEAD --; then
+          echo "No changes to commit"
+        else
+          git commit -m "Update HTML file"
+          git push origin main
+        fi
+
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
