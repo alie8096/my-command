@@ -80,7 +80,7 @@ jobs:
           return html_content
 
         # Function to read markdown file and convert to HTML
-        def convert_markdown_file(input_file, output_file, title):
+        def convert_markdown_file(input_file, output_file):
           with open(input_file, "r", encoding="utf-8") as file:
             md_text = file.read()
 
