@@ -37,7 +37,7 @@ jobs:
         def highlight_codde(code, language):
           try:
             lexer = get_lexer_by_name(language, stripall=True)
-          exept Exception:
+          except Exception:
             lexer = TextLexer(stripall=True)
 
           formatter = HtmlFormatter(cssclass="code-box", style="colorful")
