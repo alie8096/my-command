@@ -67,7 +67,7 @@ jobs:
           # Split code from code language 
           def code_block_replacer(match):
             language = match.group(1)
-            code = match.group(2).rstrip() # Remove trailing whitespace from code
+            code = match.group(2).rstrip()  # Remove trailing whitespace from code
 
             return highlight_code(code, language)
 
