@@ -24,9 +24,9 @@ jobs:
     - name: Convert Markdown to HTML
       run: |
         python - <<EOF
-        from pygment.lexers import get_lexer_by_name, TextLexer
-        from pygment.formatters import HtmlFormatter
-        from pygment import highlight
+        from pygments.lexers import get_lexer_by_name, TextLexer
+        from pygments.formatters import HtmlFormatter
+        from pygments import highlight
         import markdown
         import re
 
