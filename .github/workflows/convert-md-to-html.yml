@@ -56,7 +56,7 @@ jobs:
           """
           highlighted_code = re.sub(r'<div class="code-box">', f'<div class="code-box">{code-info}', highlight_code)
           
-          return highlighted_code)
+          return highlighted_code
 
 
         # Function to convert markdown to HTML
