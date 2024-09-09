@@ -30,7 +30,6 @@ jobs:
         import markdown
         import re
 
-
         SVG_COPY = '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>'
         
         # Function to highlight code blocks
@@ -39,9 +38,9 @@ jobs:
             lexer = get_lexer_by_name(language, stripall=True)
           except Exception:
             lexer = TextLexer(stripall=True)
-
+            
           formatter = HtmlFormatter(cssclass="code-box", style="colorful")
-          highlight_code = highlight(code, lexer, formatter)
+          highlighted_code = highlight(code, lexer, formatter)
 
           code_info = f"""
               <div class="code-info">
@@ -54,24 +53,24 @@ jobs:
                   <span class="language">{language}</span>
               </div>
           """
-          highlighted_code = re.sub(r'<div class="code-box">', f'<div class="code-box">{code_info}', highlight_code)
+          highlighted_code = re.sub(r'<div class="code-box">', f'<div class="code-box">{code_info}', highlighted_code)
           
           return highlighted_code
 
 
         # Function to convert markdown to HTML
         def markdown_to_html(md_text):
-          # Regex to match code blocks
-          code_block_re = re.compile(r"```(\w*)\s*(.*?)\s*```", re.DOTALL | re.MULTILINE)
+          # Use raw string to avoid special character issues
+          code_block_re = re.compile(r"```(\w*)\s*([\s\S]*?)\s*```", re.DOTALL | re.MULTILINE)
 
-          # Split code from code language 
+          # Replace code block with highlighted code
           def code_block_replacer(match):
-            language = match.group(1)  # Group 1 is the language
-            code = match.group(2).rstrip()  # Group 2 is the code content, remove trailing whitespace
+            language = match.group(1) or "text"  # Group 1 is the language
+            code = match.group(2).strip()  # Group 2 is the code content, trim whitespace
 
             return highlight_code(code, language)
 
-          # Convert code block
+          # Apply the regex substitution
           html_with_highlight_code = code_block_re.sub(code_block_replacer, md_text)
 
           # Convert markdown to HTML
