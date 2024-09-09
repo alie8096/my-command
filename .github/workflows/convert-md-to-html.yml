@@ -19,7 +19,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies
-      run: pip install markdown pygments
+      run: pip install markdown Pygments
 
     - name: Convert Markdown to HTML
       run: |
