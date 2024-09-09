@@ -64,8 +64,14 @@ jobs:
 
           # Replace code block with highlighted code
           def code_block_replacer(match):
-            language = match.group(1) if match.group(1).strip() else "text"  # Group 1 is the language, use default if not present
-            code = match.group(2).strip()  # Group 2 is the code content, trim whitespace
+
+            if match:
+                language = match.group(1) if len(match.groups()) > 0 else None
+                code = match.group(2) if len(match.groups()) > 1 else None
+                # Process group1 and group2
+            else:
+                # Handle no match case or return original text
+                pass
             
             return highlight_code(code, language)
 
