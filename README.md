@@ -16,3 +16,11 @@ git fetch --all && git pull origin '*:*'
 ```bash
 sudo dpkg -i package.deb
 ```
+
+## Merge two branch
+
+`merge branch 2 to branch 1`
+
+```bash
+git merge branch2
+```
