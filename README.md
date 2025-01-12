@@ -55,3 +55,30 @@ cd download_directory && sha256sum ubuntu-9.10-dvd-i386.iso
 printf Hello, world | openssl dgst -sha-256sum
 ```
 
+## Tmux
+
+- `Zoomin window`
+
+``Ctrl + b`` ``z``
+
+- `Zoomout window`
+
+``Ctrl + b`` ``z``
+
+- `Vertical division window`
+
+``Ctrl + b`` ``Shift + 5``
+
+OR
+
+``Ctrl + b`` ``%``
+
+- `Horizontal division window`
+
+``Ctrl + b`` ``Shift + '``
+
+OR
+
+``Ctrl + b`` ``"``
+
+
