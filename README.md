@@ -57,7 +57,7 @@ printf Hello, world | openssl dgst -sha-256sum
 
 ## Tmux
 
-- `Zoomin window`
+- Zoomin window
 
 ``Ctrl + b`` ``z``
 
@@ -65,7 +65,7 @@ printf Hello, world | openssl dgst -sha-256sum
 
 ``Ctrl + b`` ``z``
 
-- `Vertical division window`
+- Vertical division window
 
 ``Ctrl + b`` ``Shift + 5``
 
@@ -73,7 +73,7 @@ OR
 
 ``Ctrl + b`` ``%``
 
-- `Horizontal division window`
+- Horizontal division window
 
 ``Ctrl + b`` ``Shift + '``
 
