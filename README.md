@@ -57,28 +57,11 @@ printf Hello, world | openssl dgst -sha-256sum
 
 ## Tmux
 
-- Zoomin window
-
-``Ctrl + b`` ``z``
-
-- `Zoomout window`
-
-``Ctrl + b`` ``z``
-
-- Vertical division window
-
-``Ctrl + b`` ``Shift + 5``
-
-OR
-
-``Ctrl + b`` ``%``
-
-- Horizontal division window
-
-``Ctrl + b`` ``Shift + '``
-
-OR
-
-``Ctrl + b`` ``"``
-
-
+| Activation | Command |
+| --- | --- |
+| Zoomin window | ``Ctrl + b`` ``z`` |
+| Zoomout window | ``Ctrl + b`` ``z``   |
+| Vertical division window | ``Ctrl + b`` ``%`` |
+| Horizontal division window | ``Ctrl + b`` ``"`` |
+| Close a window | ``Ctrl + b`` ``x`` |
+| Close all windows (close tmux) | ``Ctrl + b`` ``&`` |
