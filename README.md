@@ -65,3 +65,16 @@ printf Hello, world | openssl dgst -sha-256sum
 | Horizontal division window | ``Ctrl + b`` ``"`` |
 | Close a window | ``Ctrl + b`` ``x`` |
 | Close all windows (close tmux) | ``Ctrl + b`` ``&`` |
+| Resize winddows | ``Ctrl + b`` ``⭠ ⭡ ⭣ ⭢`` |
+| Show Time | ``Ctrl + b`` ``t`` |
+| Number of windows | ``Ctrl + b`` ``q`` |
+
+
+## Vim
+
+| Description | Command |
+| --- | --- |
+| Copy mode | ``Ctrl + v`` |
+| Copy | ``"`` + ``+`` + ``y`` |
+| Pase | ``"`` + ``+`` + ``p`` |
+
