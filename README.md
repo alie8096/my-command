@@ -103,7 +103,10 @@ printf Hello, world | openssl dgst -sha-256sum
 - To clone repository with all branches
 
   ```bash
-  git clone --mirror <repo-url>
+  git clone <repo-url>
+  cd <repo>
+  git fetch --all
+  for branch in $(git branch -r | grep -v '\->');do git branch --track "${branch#origin/}" "$branch"; done
   ```
 
 - To push all branches
