@@ -259,7 +259,10 @@
             </div>
             <span class="language">bash</span>
         </div>
-    <pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>--mirror<span class="w"> </span>&lt;repo-url&gt;
+    <pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>&lt;repo-url&gt;
+<span class="w">  </span><span class="nb">cd</span><span class="w"> </span>&lt;repo&gt;
+<span class="w">  </span>git<span class="w"> </span>fetch<span class="w"> </span>--all
+<span class="w">  </span><span class="k">for</span><span class="w"> </span>branch<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>git<span class="w"> </span>branch<span class="w"> </span>-r<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span><span class="s1">&#39;\-&gt;&#39;</span><span class="k">)</span><span class="p">;</span><span class="k">do</span><span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>--track<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">branch</span><span class="p">#origin/</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$branch</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
 </pre></div>
 
 <ul>
