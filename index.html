@@ -397,334 +397,144 @@
 <h2>Emmet (HTML-CSS)</h2>
 <h3>HTML</h3>
 <ul>
-<li><a href="https://docs.emmet.io/cheat-sheet/">emmet CheatSheet</a></li>
+<li>
+<p><a href="https://docs.emmet.io/cheat-sheet/">emmet CheatSheet</a></p>
+</li>
+<li>
+<p><strong>Command</strong>: <code>a:www.google.com</code></p>
+</li>
+<li><strong>Description</strong>: Add <code>href</code> to the <code>&lt;a&gt;</code> tag.</li>
+<li>
+<p><strong>Result</strong>:
+     <div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">html</span>
+        </div>
+    <pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;www.google.com&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div></p>
+</li>
+<li>
+<p><strong>Command</strong>: <code>a[https://google.com]</code></p>
+</li>
+<li><strong>Description</strong>: Add <code>href</code> to the <code>&lt;a&gt;</code> tag.</li>
+<li>
+<p><strong>Result</strong>:
+     <div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">html</span>
+        </div>
+    <pre><span></span><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://google.com&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</pre></div></p>
+</li>
+<li>
+<p><strong>Command</strong>: <code>ul&lt;li{example text $}*5</code></p>
+</li>
+<li><strong>Description</strong>: Add content to multiple <code>&lt;li&gt;</code> tags and repeat them.</li>
+<li>
+<p><strong>Result</strong>:
+     <div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">html</span>
+        </div>
+    <pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>example text $<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>example text $<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>example text $<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>example text $<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>example text $<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div></p>
+</li>
+<li>
+<p><strong>Command</strong>: <code>ul&gt;li#item$@-43*5</code></p>
+</li>
+<li><strong>Description</strong>: Inverse the number from 43, and create 5 <code>&lt;li&gt;</code> elements with the inverted number as part of the content.</li>
+<li>
+<p><strong>Result</strong>:
+     <div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">html</span>
+        </div>
+    <pre><span></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;item-43&quot;</span><span class="p">&gt;</span>item-43<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;item-42&quot;</span><span class="p">&gt;</span>item-42<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;item-41&quot;</span><span class="p">&gt;</span>item-41<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;item-40&quot;</span><span class="p">&gt;</span>item-40<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">li</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;item-39&quot;</span><span class="p">&gt;</span>item-39<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</pre></div></p>
+</li>
+<li>
+<p><strong>Command</strong>: <code>table&gt;(thead&gt;tr&gt;th{col$}*4) + (tbody&gt;tr*3&gt;td{row$-$}*4)</code></p>
+</li>
+<li><strong>Description</strong>: Create a table with automatic content, including a header and body rows with numbered columns and rows.</li>
+<li><strong>Result</strong>:
+     <div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">html</span>
+        </div>
+    <pre><span></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>col1<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>col2<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>col3<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>col4<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+       <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+       <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row1-1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row1-2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row1-3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row1-4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row2-1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row2-2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row2-3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row2-4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+         <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row3-1<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row3-2<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row3-3<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+           <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>row3-4<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+         <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+       <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+     <span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</pre></div></li>
 </ul>
-<table>
-<thead>
-<tr>
-<th><strong>Command</strong></th>
-<th><strong>Description</strong></th>
-<th><strong>Result</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><div class="code-box"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-info"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><button class="copy-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span>Copy code</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></button></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="language">html</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><pre><span></span><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>a:www.google.com<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></pre></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Add <code>href</code> to <code>a</code> tag</td>
-<td><div class="code-box"></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-info"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><button class="copy-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span>Copy code</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></button></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="language">html</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><pre><span></span><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;www.google.com&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;</span><span class="nt">br</span><span class="p">&gt;</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></pre></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-box"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-info"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><button class="copy-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span>Copy code</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></button></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="language">html</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><pre><span></span><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>a[https://google.com]<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></pre></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Add <code>href</code> to <code>a</code> tag</td>
-<td><div class="code-box"></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-info"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><button class="copy-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span>Copy code</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></button></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="language">html</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><pre><span></span><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://google.com&quot;</span><span class="err">&lt;</span><span class="na">br</span><span class="p">&gt;</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></pre></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-box"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-info"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><div class="code-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><button class="copy-icon"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span>Copy code</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></button></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><span class="language">html</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td><pre><span></span><span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>ul<span class="p">&lt;</span><span class="nt">li</span><span class="err">{</span><span class="na">example</span> <span class="na">text</span> <span class="err">$}*</span><span class="na">5</span><span class="err">&lt;</span><span class="na">br</span><span class="p">&gt;</span></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></pre></div></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Add content to multi tags and numbers</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
             </div>
         </div>
     </main>
