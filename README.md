@@ -166,7 +166,7 @@ printf Hello, world | openssl dgst -sha-256sum
 
 ### HTML
 
-- [📑Emmet CheatSheet](https://docs.emmet.io/cheat-sheet/)
+- [***📑 Emmet CheatSheet***](https://docs.emmet.io/cheat-sheet/)
 
 - **Command**: `a:www.google.com`
    - **Description**: Add `href` to the `<a>` tag.
