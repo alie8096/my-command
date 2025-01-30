@@ -168,8 +168,78 @@ printf Hello, world | openssl dgst -sha-256sum
 
 - [emmet CheatSheet](https://docs.emmet.io/cheat-sheet/)
 
-| **Command** | **Description** | **Result** |
-| --- | --- | --- |
-| ```html<br>a:www.google.com<br>``` | Add `href` to `a` tag | ```html<br><a href="www.google.com"></a><br>``` |
-| ```html<br>a[https://google.com]<br>``` | Add `href` to `a` tag | ```html<br><a href="https://google.com"<br>``` |
-| ```html<br>ul<li{example text $}*5<br>``` | Add content to multi tags and numbers | |
+- **Command**: `a:www.google.com`
+   - **Description**: Add `href` to the `<a>` tag.
+   - **Result**:
+     ```html
+     <a href="www.google.com"></a>
+     ```
+
+- **Command**: `a[https://google.com]`
+   - **Description**: Add `href` to the `<a>` tag.
+   - **Result**:
+     ```html
+     <a href="https://google.com"></a>
+     ```
+
+- **Command**: `ul<li{example text $}*5`
+   - **Description**: Add content to multiple `<li>` tags and repeat them.
+   - **Result**:
+     ```html
+     <ul>
+       <li>example text $</li>
+       <li>example text $</li>
+       <li>example text $</li>
+       <li>example text $</li>
+       <li>example text $</li>
+     </ul>
+     ```
+
+-  **Command**: `ul>li#item$@-43*5`
+   - **Description**: Inverse the number from 43, and create 5 `<li>` elements with the inverted number as part of the content.
+   - **Result**:
+     ```html
+     <ul>
+       <li id="item-43">item-43</li>
+       <li id="item-42">item-42</li>
+       <li id="item-41">item-41</li>
+       <li id="item-40">item-40</li>
+       <li id="item-39">item-39</li>
+     </ul>
+     ```
+
+- **Command**: `table>(thead>tr>th{col$}*4) + (tbody>tr*3>td{row$-$}*4)`
+   - **Description**: Create a table with automatic content, including a header and body rows with numbered columns and rows.
+   - **Result**:
+     ```html
+     <table>
+       <thead>
+         <tr>
+           <th>col1</th>
+           <th>col2</th>
+           <th>col3</th>
+           <th>col4</th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>row1-1</td>
+           <td>row1-2</td>
+           <td>row1-3</td>
+           <td>row1-4</td>
+         </tr>
+         <tr>
+           <td>row2-1</td>
+           <td>row2-2</td>
+           <td>row2-3</td>
+           <td>row2-4</td>
+         </tr>
+         <tr>
+           <td>row3-1</td>
+           <td>row3-2</td>
+           <td>row3-3</td>
+           <td>row3-4</td>
+         </tr>
+       </tbody>
+     </table>
+     ```
