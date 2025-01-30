@@ -134,12 +134,42 @@ printf Hello, world | openssl dgst -sha-256sum
   git branch --verbose
   ```
 
+- Show graphically git log
+
+  ```bash
+  git log --all --decorate --online --graph
+  ```
+
 ## Linux
 
-To mount external hard
+- To mount external hard
 
-```bash
-sudo mount -t ntfs-3g /dev/sdb2 /mnt
-```
+  ```bash
+  sudo mount -t ntfs-3g /dev/sdb2 /mnt
+  ```
 
+- Exteract `example.zip` in to example/
 
+  ```bash
+  unzip example.zip -d example
+  ```
+
+- find file
+
+  `find [parent-path] -type [type] -iname "name"`
+
+  ```bash
+  find /home -type f -iname "file-*.txt"
+  ```
+
+## Emmet (HTML-CSS)
+
+### HTML
+
+- [emmet CheatSheet](https://docs.emmet.io/cheat-sheet/)
+
+| **Command** | **Description** | **Result** |
+| --- | --- | --- |
+| ```html<br>a:www.google.com<br>``` | Add `href` to `a` tag | ```html<br><a href="www.google.com"></a><br>``` |
+| ```html<br>a[https://google.com]<br>``` | Add `href` to `a` tag | ```html<br><a href="https://google.com"<br>``` |
+| ```html<br>ul<li{example text $}*5<br>``` | Add content to multi tags and numbers | |
