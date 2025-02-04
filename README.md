@@ -1,10 +1,15 @@
 # my-command
 
+## Cheatsheets
+
+- [![Vim](Images/vim-icon.svg){width=50px}](https://devhints.io/vim)
+
 ## Compile C
 
 ```bash
 gcc -o caesar caesar.c -lcs50
 ```
+
 ## Get all branch of repository
 
 ```bash
