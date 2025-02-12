@@ -212,10 +212,140 @@
 <td><code>"</code> + <code>+</code> + <code>p</code></td>
 <td></td>
 </tr>
+<tr>
+<td>Write on the previuse line</td>
+<td><code>Shift + o</code></td>
+<td>for open a line before</td>
+</tr>
+<tr>
+<td>Write on the next line</td>
+<td><code>o</code></td>
+<td>for open a line after</td>
+</tr>
+<tr>
+<td>Append</td>
+<td><code>Shift + a</code></td>
+<td>for append text in end line</td>
+</tr>
+<tr>
+<td>Append</td>
+<td><code>a</code></td>
+<td>for append text after next character</td>
+</tr>
+<tr>
+<td>Delete word</td>
+<td><code>d + w</code></td>
+<td>for delete word</td>
+</tr>
+<tr>
+<td>Delete line</td>
+<td><code>d + $</code></td>
+<td>for delete line</td>
+</tr>
+<tr>
+<td>Delete line (cut)</td>
+<td><code>d + d</code></td>
+<td>for delet line (all)</td>
+</tr>
+<tr>
+<td>Move word</td>
+<td><code>w</code></td>
+<td>for move on the beginning of words</td>
+</tr>
+<tr>
+<td>Move word</td>
+<td><code>e</code></td>
+<td>for move on the ends of words</td>
+</tr>
+<tr>
+<td>Start line</td>
+<td><code>0</code></td>
+<td>for move on the beginning of lines</td>
+</tr>
+<tr>
+<td>End line</td>
+<td><code>$</code></td>
+<td>for move on the ends lines</td>
+</tr>
+<tr>
+<td>Delete multi word</td>
+<td><code>5 + d + w</code></td>
+<td>for delete 5 words</td>
+</tr>
+<tr>
+<td>Undo</td>
+<td><code>u</code></td>
+<td>for undo one by one</td>
+</tr>
+<tr>
+<td>Undo</td>
+<td><code>Shift + u</code></td>
+<td>for undo</td>
+</tr>
+<tr>
+<td>Redo</td>
+<td><code>Ctrl + r</code></td>
+<td>for redo</td>
+</tr>
+<tr>
+<td>Replace</td>
+<td><code>r</code></td>
+<td>for replace a letter</td>
+</tr>
+<tr>
+<td>Correct</td>
+<td><code>ce</code> or <code>cw</code> or <code>c$</code> or ...</td>
+<td><code>ce</code>:Correct and replace untile end of word. <code>c$</code>: Correct from the word until end of the line.</td>
+</tr>
+<tr>
+<td>Show file info</td>
+<td><code>Ctrl + g</code></td>
+<td>Show file name, lines and ...</td>
+</tr>
+<tr>
+<td>End of the file</td>
+<td><code>Shift + g</code></td>
+<td>go to end file</td>
+</tr>
+<tr>
+<td>Start of the file</td>
+<td><code>g + g</code></td>
+<td>go to start file</td>
+</tr>
+<tr>
+<td>Go to line n</td>
+<td><code>n + Shift + g</code></td>
+<td>Go to line n (n is a natural number)</td>
+</tr>
+<tr>
+<td>Search</td>
+<td><code>/</code></td>
+<td>For search in forwqrd</td>
+</tr>
+<tr>
+<td>Search</td>
+<td><code>?</code></td>
+<td>for search in backward</td>
+</tr>
+<tr>
+<td>Next</td>
+<td><code>n</code></td>
+<td>next finded</td>
+</tr>
+<tr>
+<td>Previous</td>
+<td><code>Shift + n</code></td>
+<td>previous finded</td>
+</tr>
+<tr>
+<td>Find maches</td>
+<td><code>%</code></td>
+<td>find maches parantesis or brocets or ...</td>
+</tr>
 </tbody>
 </table>
 <ul>
-<li><strong>replace</strong></li>
+<li><strong>Substitude</strong></li>
 </ul>
 <p><code>:[range]s/pattern/replacement/[flags]</code> </p>
 <ul>
@@ -230,7 +360,7 @@
 <p><strong><em>[flags]</em></strong></p>
 <ul>
 <li><code>g</code> -&gt; All selected by <strong>pattern</strong></li>
-<li><code>c</code> -&gt; Accept for each replace</li>
+<li><code>c</code> -&gt; Accept for each replace (confirm)</li>
 </ul>
 </li>
 <li>
@@ -398,6 +528,21 @@
     <pre><span></span>find<span class="w"> </span>/home<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-iname<span class="w"> </span><span class="s2">&quot;file-*.txt&quot;</span>
 </pre></div>
 
+<ul>
+<li>
+<p><strong>cat &amp; tac</strong></p>
+</li>
+<li>
+<p><code>cat</code>: show file from beginning to end.</p>
+<ul>
+<li><code>-n</code> -&gt; number lines</li>
+<li><code>-b</code> -&gt; number lines none block</li>
+<li><code>-A</code> -&gt; end lines</li>
+<li><code>-s</code> -&gt; remove white enter</li>
+</ul>
+</li>
+<li><code>tac</code>: show file from end to beginning.</li>
+</ul>
 <h2>Emmet (HTML-CSS)</h2>
 <h3>HTML</h3>
 <ul>
