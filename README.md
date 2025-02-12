@@ -82,8 +82,34 @@ printf Hello, world | openssl dgst -sha-256sum
 | Copy mode | ``Ctrl + v`` |  |
 | Copy | ``"`` + ``+`` + ``y`` |  |
 | Pase | ``"`` + ``+`` + ``p`` |  |
+| Write on the previuse line | ``Shift + o`` | for open a line before |
+| Write on the next line | ``o`` | for open a line after |
+| Append | ``Shift + a`` | for append text in end line |
+| Append | ``a`` | for append text after next character |
+| Delete word | ``d + w`` | for delete word |
+| Delete line | ``d + $`` | for delete line |
+| Delete line (cut) | ``d + d`` | for delet line (all) |
+| Move word | ``w`` | for move on the beginning of words |
+| Move word | ``e`` | for move on the ends of words |
+| Start line | ``0`` | for move on the beginning of lines |
+| End line | ``$`` | for move on the ends lines |
+| Delete multi word | ``5 + d + w`` | for delete 5 words |
+| Undo | ``u`` | for undo one by one |
+| Undo | ``Shift + u`` | for undo |
+| Redo | ``Ctrl + r`` | for redo |
+| Replace | ``r`` | for replace a letter |
+| Correct | ``ce`` or ``cw`` or ``c$`` or ... | `ce`:Correct and replace untile end of word. `c$`: Correct from the word until end of the line. |
+| Show file info | ``Ctrl + g`` | Show file name, lines and ... |
+| End of the file | ``Shift + g`` | go to end file |
+| Start of the file | ``g + g`` | go to start file |
+| Go to line n | ``n + Shift + g`` | Go to line n (n is a natural number) |
+| Search | ``/`` | For search in forwqrd |
+| Search | ``?`` | for search in backward |
+| Next | ``n`` | next finded |
+| Previous | ``Shift + n`` | previous finded |
+| Find maches | ``%`` | find maches parantesis or brocets or ... |
 
-- **replace**
+- **Substitude**
 
 ``:[range]s/pattern/replacement/[flags]`` 
 
@@ -94,7 +120,7 @@ printf Hello, world | openssl dgst -sha-256sum
   + ***replacement*** -> text
   + ***[flags]***
     - `g` -> All selected by **pattern**
-    - `c` -> Accept for each replace
+    - `c` -> Accept for each replace (confirm)
 
   * for example: *replace foo inestead of bar on all content*
  
@@ -147,6 +173,7 @@ printf Hello, world | openssl dgst -sha-256sum
 
 ## Linux
 
+
 - To mount external hard
 
   ```bash
@@ -166,6 +193,15 @@ printf Hello, world | openssl dgst -sha-256sum
   ```bash
   find /home -type f -iname "file-*.txt"
   ```
+
+- **cat & tac**
+
+  - `cat`: show file from beginning to end.
+    - `-n` -> number lines
+    - `-b` -> number lines none block
+    - `-A` -> end lines
+    - `-s` -> remove white enter
+  - `tac`: show file from end to beginning.
 
 ## Emmet (HTML-CSS)
 
