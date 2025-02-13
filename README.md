@@ -2,7 +2,7 @@
 
 ## Cheatsheets
 
-- [![Vim](Images/vim-icon.svg){width=50px}](https://devhints.io/vim)
+- <a href="https://devhints.io/vim"><img src="Images/vim-icon.svg"  style="width: 50px; height: 50px"/>Vim</a>
 
 ## Compile C
 
