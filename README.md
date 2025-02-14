@@ -128,7 +128,9 @@ printf Hello, world | openssl dgst -sha-256sum
     ```vim
     :%s/bar/foo/g
     ```
+### Customize vim
 
+- <a href="https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/" style="font-weight: bold;" target="_blank">Customize Vim</a>
 
 ## Git
 
@@ -285,3 +287,112 @@ printf Hello, world | openssl dgst -sha-256sum
        </tbody>
      </table>
      ```
+
+## Text
+
+- **head**
+
+  View the first 15 lines of the file
+  
+  ```bash
+  head -n 15 file.txt
+  ```
+
+- **tail**
+
+  View the last 15 lines of the file
+
+  ```bash
+  tail -n 15 file.txt
+  ```
+- **cat**
+
+  Show files with line numbers
+
+  ```bash
+  cat -n file.txt
+  ```
+
+- **grep**
+
+   - Filter file after line 190 by "ali"
+ 
+     ```bash
+     grep -A 190 ali file.txt
+     ```
+     OR
+ 
+     ```bash
+     tail -n 40 file.txt | grep ali 
+     ```
+
+   - Filter file before line 190 by "ali"
+ 
+     ```bash
+     grep -B ali file.txt
+     ```
+
+   - To don't show phrase(for example: filter by ali but does include hadi)
+ 
+     ```bash
+     grep ali | grep -v hadi
+     ```
+
+   - To recursive filter
+  
+     ```bash
+     grep -r .py ~/Desktop
+     ```
+
+- **egrep**
+
+  For RegEx
+
+  - find exactly a and 2 l
+ 
+    ```bash
+    egrep 'al{2}' file.txt
+    ```
+
+  - find a and minimum 2 l
+ 
+    ```bash
+    egrep 'al{2,}' file.txt
+    ```
+
+  - find a and maximum 2 l
+ 
+    ```bash
+    egrep 'al{,2}' file.txt
+    ```
+
+- **diff**
+
+  - differente lines in 2 simailar files
+ 
+    ```bash
+    diff file1.txt file2.txt
+    ```
+
+- **cut**
+
+  > remove sections from each lines of files
+
+  - Processing stdout `ls -lh` and get field 5 and 10 and saving into fileinfo.txt
+ 
+    ```bash
+    ls -lh | cut --delimiter=" " -f 5,10 > fileinfo.txt
+    ```
+
+
+- **tr**
+
+  > translate or delete characters
+
+  - lowercase to uppercase (freq -> FREQ)
+ 
+    ```bash
+    echo 'freq' | tr [:lower:] [:upper:]
+    ```
+
+
