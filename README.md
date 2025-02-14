@@ -90,6 +90,7 @@ printf Hello, world | openssl dgst -sha-256sum
 | Delete line | ``d + $`` | for delete line |
 | Delete line (cut) | ``d + d`` | for delet line (all) |
 | Move word | ``w`` | for move on the beginning of words |
+| Move word | ``b`` | Backward to start  of current/previous word |
 | Move word | ``e`` | for move on the ends of words |
 | Start line | ``0`` | for move on the beginning of lines |
 | End line | ``$`` | for move on the ends lines |
