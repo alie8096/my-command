@@ -206,6 +206,50 @@ printf Hello, world | openssl dgst -sha-256sum
     - `-s` -> remove white enter
   - `tac`: show file from end to beginning.
 
+- **Change Python version**
+
+  - if call python run python2
+  
+    ```bash
+    sudo ln -sf /user/bin/python2 /user/bin/python
+    ```
+
+- **Changing user with root access**
+
+  ```bash
+  vim /etc/sudoers
+  ```
+  
+  `user   host=(user)    command`
+
+  - go to line `#Allow root to run any commands anywhere` and added ...
+ 
+    ```bash
+    user  ALL=(ALL)    ALL
+    ```
+  
+  - The user can onlychange their password (passwd command)
+ 
+    ```bash
+    user  ALL=(ALL)    /bin/passwd
+    ```
+
+- **SSH**
+
+  - get IP config -> (int 127.23.21.11)
+ 
+    must be install `sudo apt install net-tools`
+ 
+    ```bash
+    ifconfig
+    ```
+    
+  - ssh to phone (android)
+ 
+    ```bash
+    ssh u0_aXXX@192.168.X.X -p 8022
+    ```
+
 ## Emmet (HTML-CSS)
 
 ### HTML
@@ -395,4 +439,35 @@ printf Hello, world | openssl dgst -sha-256sum
     echo 'freq' | tr [:lower:] [:upper:]
     ```
 
+## **Phone**
 
+- get username 
+
+  ```bash
+  whoami
+  ```
+
+- get IP
+
+  `pkg install net-tools`
+
+  ```bash
+  ifconfig
+  ```
+
+- run ssh in phone
+
+  ```bash
+  sshd
+  ```
+
+- set password
+
+  ```bash
+  passwd
+  ```
+  AND
+
+  ```bash
+  chmode 600 ~/.ssh/authorized_keys
+  ```
