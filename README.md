@@ -471,3 +471,9 @@ printf Hello, world | openssl dgst -sha-256sum
   ```bash
   chmode 600 ~/.ssh/authorized_keys
   ```
+
+- close ssh
+
+  ```bash
+  exit
+  ```
