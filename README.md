@@ -4,6 +4,9 @@
 
 - <a href="https://devhints.io/vim" style="font-size: 2rem; font-weight: bold;" target="_blank"><img src="Images/vim-icon.svg"  style="width: 30px; height: 30px"/> Vim</a>
 
+- <a href="https://www.howtogeek.com/307701/how-to-customize-and-colorize-your-bash-prompt/" style="font-size: 2rem; font-weight: bold;" target="_blank">Customize Bash</a>
+
+
 ---
 
 ## Compile C
