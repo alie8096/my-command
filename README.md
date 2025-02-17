@@ -4,6 +4,8 @@
 
 - <a href="https://devhints.io/vim" style="font-size: 2rem; font-weight: bold;" target="_blank"><img src="Images/vim-icon.svg"  style="width: 30px; height: 30px"/> Vim</a>
 
+---
+
 ## Compile C
 
 ```bash
@@ -34,6 +36,8 @@ git merge branch2
 
 `Display and check hash of a file or text`
 
+---
+
 ### SHA256
 
 - display hash of a sample text "Hello, world"
@@ -60,6 +64,8 @@ cd download_directory && sha256sum ubuntu-9.10-dvd-i386.iso
 printf Hello, world | openssl dgst -sha-256sum
 ```
 
+---
+
 ## Tmux
 
 | Activation | Command |
@@ -74,6 +80,7 @@ printf Hello, world | openssl dgst -sha-256sum
 | Show Time | ``Ctrl + b`` ``t`` |
 | Number of windows | ``Ctrl + b`` ``q`` |
 
+---
 
 ## Vim
 
@@ -132,6 +139,8 @@ printf Hello, world | openssl dgst -sha-256sum
 
 - <a href="https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/" style="font-weight: bold;" target="_blank">Customize Vim</a>
 
+---
+
 ## Git
 
 - To clone repository with all branches
@@ -173,6 +182,8 @@ printf Hello, world | openssl dgst -sha-256sum
   ```bash
   git log --all --decorate --online --graph
   ```
+
+---
 
 ## Linux
 
@@ -234,6 +245,8 @@ printf Hello, world | openssl dgst -sha-256sum
     user  ALL=(ALL)    /bin/passwd
     ```
 
+---
+
 ###  **SSH**
 
   - get IP config -> (int 127.23.21.11)
@@ -284,6 +297,7 @@ printf Hello, world | openssl dgst -sha-256sum
 scp -r u0_aXXX@other-sys:test.txt .
 ```
 
+---
 
 ## Emmet (HTML-CSS)
 
@@ -366,6 +380,8 @@ scp -r u0_aXXX@other-sys:test.txt .
        </tbody>
      </table>
      ```
+
+---
 
 ## Text
 
@@ -474,6 +490,8 @@ scp -r u0_aXXX@other-sys:test.txt .
     echo 'freq' | tr [:lower:] [:upper:]
     ```
 
+---
+
 ## **Phone**
 
 - get username 
@@ -512,3 +530,137 @@ scp -r u0_aXXX@other-sys:test.txt .
   ```bash
   exit
   ```
+
+---
+
+## Bash
+
+- `>` : write
+- `>>` : append
+- `<` : (stdin)
+
+  ```bash
+  sort < file.txt
+  ```
+- `|` : pipe (stdin)
+
+  ```bash
+  cat file.txt | sort
+  ```
+- (stdin) 
+
+  ```bash
+  sort file.txt
+  ```
+
+- `0` : stdin
+- `1` : stdout
+- `2` : stderr
+
+
+- **Bash completion**
+
+ - if bash completion is disable
+ 
+    ```bash
+    sudo vim /etc/inputrc
+    ```
+ 
+    chane `disable-completion on` to `disable-completion off` or  delete this line.
+   
+    ```bash
+    set disable-completion off
+    ```
+
+
+- **variables**
+
+  - show variables
+ 
+    ```bash
+    env
+    ```
+
+  - show variables
+ 
+    ```bash
+    echo $PWD
+    ```
+
+  - define temporary variable
+ 
+    ```bash
+    export MYVAR=/home/path
+    ```
+
+- **define permanently variable**
+
+  ```bash
+  vim ~/.bashrc 
+  ```
+
+  Adding variables permanently
+
+  ```bash
+  # export SYSTEMD_PAGER=
+  export MYVARFILE=/home/path
+  ```
+
+  apply changes
+
+  ```bash
+  source ~/.bashrc
+  ```
+
+- **define alias**
+
+  ```bash
+  vim ~/.bashrc 
+  ```
+ 
+  adding alias command
+  
+  ```bash
+  # User specific aliases and function
+  alias mydir="cd $MYVAR; ls -aF"
+  ```
+
+- **bash history**
+
+  show all commands 
+
+  ```bash
+  vim ~/.bash_history
+  ```
+
+  run commands from history (for example run command 6)
+
+  ```bash
+  !6
+  ```
+
+  clear history
+
+  ```bash
+  history -c
+  history -w
+  ```
+
+- **bash logout**
+
+  write stdout of  a command or function log whene logout bash (for example)
+
+  append stdout of `ls -l` command into `new_log` file
+
+  ```bash
+  vim ~/.bash_logout
+  ```
+
+  ```bash
+  # ~/.bash_logout
+  ls -l >> new_log
+  ```
+
+- **bash profile**
+
+  similar to  bashrc
