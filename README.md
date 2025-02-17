@@ -234,7 +234,7 @@ printf Hello, world | openssl dgst -sha-256sum
     user  ALL=(ALL)    /bin/passwd
     ```
 
-- **SSH**
+###  **SSH**
 
   - get IP config -> (int 127.23.21.11)
  
@@ -249,6 +249,41 @@ printf Hello, world | openssl dgst -sha-256sum
     ```bash
     ssh u0_aXXX@192.168.X.X -p 8022
     ```
+
+#### **SSH-KEYGEN**
+
+- generate ssh-kegen
+
+  ```bash
+  ssh-keygen
+  ```
+
+- Introducing another system's IP and saving it in the current system
+  
+  ```bash
+  sudo vim /etc/hosts
+  ```
+ 
+  append ip to hosts file
+ 
+  ```bash
+  192.168.X.X  other-sys
+  ```
+
+- easy ssh
+
+  ```bash
+  ssh u0_aXXX@other-sys
+  ```
+
+#### **SCP (secure copy)**
+
+- copy file `test.txt` from other sytem to this system (by recursive)
+
+```bash
+scp -r u0_aXXX@other-sys:test.txt .
+```
+
 
 ## Emmet (HTML-CSS)
 
