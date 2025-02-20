@@ -248,6 +248,20 @@ printf Hello, world | openssl dgst -sha-256sum
     user  ALL=(ALL)    /bin/passwd
     ```
 
+### Ubuntu
+
+- Move to monitors
+
+``Super + Shift + ⭠ ⭡ ⭣ ⭢``
+
+- Move window
+
+``Alt + F7 + ⭠ ⭡ ⭣ ⭢ + Enter``
+
+- Change size
+
+``Alt + F8 + ⭠ ⭡ ⭣ ⭢ + Enter``
+
 ---
 
 ###  **SSH**
