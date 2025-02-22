@@ -171,7 +171,7 @@ printf Hello, world | openssl dgst -sha-256sum
 
   ```bash
   git add .
-  git commit --amend --no-edit
+git commit --amend --no-edit
   ```
 
 - To check status of the commits
@@ -341,12 +341,12 @@ scp -r u0_aXXX@other-sys:test.txt .
    - **Result**:
      ```html
      <ul>
-       <li>example text $</li>
-       <li>example text $</li>
-       <li>example text $</li>
-       <li>example text $</li>
-       <li>example text $</li>
-     </ul>
+  <li>example text $</li>
+  <li>example text $</li>
+  <li>example text $</li>
+  <li>example text $</li>
+  <li>example text $</li>
+</ul>
      ```
 
 -  **Command**: `ul>li#item$@-43*5`
@@ -354,12 +354,12 @@ scp -r u0_aXXX@other-sys:test.txt .
    - **Result**:
      ```html
      <ul>
-       <li id="item-43">item-43</li>
-       <li id="item-42">item-42</li>
-       <li id="item-41">item-41</li>
-       <li id="item-40">item-40</li>
-       <li id="item-39">item-39</li>
-     </ul>
+  <li id="item-43">item-43</li>
+  <li id="item-42">item-42</li>
+  <li id="item-41">item-41</li>
+  <li id="item-40">item-40</li>
+  <li id="item-39">item-39</li>
+</ul>
      ```
 
 - **Command**: `table>(thead>tr>th{col$}*4) + (tbody>tr*3>td{row$-$}*4)`
@@ -367,35 +367,35 @@ scp -r u0_aXXX@other-sys:test.txt .
    - **Result**:
      ```html
      <table>
-       <thead>
-         <tr>
-           <th>col1</th>
-           <th>col2</th>
-           <th>col3</th>
-           <th>col4</th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>row1-1</td>
-           <td>row1-2</td>
-           <td>row1-3</td>
-           <td>row1-4</td>
-         </tr>
-         <tr>
-           <td>row2-1</td>
-           <td>row2-2</td>
-           <td>row2-3</td>
-           <td>row2-4</td>
-         </tr>
-         <tr>
-           <td>row3-1</td>
-           <td>row3-2</td>
-           <td>row3-3</td>
-           <td>row3-4</td>
-         </tr>
-       </tbody>
-     </table>
+  <thead>
+    <tr>
+      <th>col1</th>
+      <th>col2</th>
+      <th>col3</th>
+      <th>col4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>row1-1</td>
+      <td>row1-2</td>
+      <td>row1-3</td>
+      <td>row1-4</td>
+    </tr>
+    <tr>
+      <td>row2-1</td>
+      <td>row2-2</td>
+      <td>row2-3</td>
+      <td>row2-4</td>
+    </tr>
+    <tr>
+      <td>row3-1</td>
+      <td>row3-2</td>
+      <td>row3-3</td>
+      <td>row3-4</td>
+    </tr>
+  </tbody>
+</table>
      ```
 
 ---
@@ -620,7 +620,7 @@ scp -r u0_aXXX@other-sys:test.txt .
 
   ```bash
   # export SYSTEMD_PAGER=
-  export MYVARFILE=/home/path
+export MYVARFILE=/home/path
   ```
 
   apply changes
@@ -639,7 +639,7 @@ scp -r u0_aXXX@other-sys:test.txt .
   
   ```bash
   # User specific aliases and function
-  alias mydir="cd $MYVAR; ls -aF"
+alias mydir="cd $MYVAR; ls -aF"
   ```
 
 - **bash history**
@@ -660,7 +660,7 @@ scp -r u0_aXXX@other-sys:test.txt .
 
   ```bash
   history -c
-  history -w
+history -w
   ```
 
 - **bash logout**
@@ -675,7 +675,7 @@ scp -r u0_aXXX@other-sys:test.txt .
 
   ```bash
   # ~/.bash_logout
-  ls -l >> new_log
+ls -l >> new_log
   ```
 
 - **bash profile**
@@ -720,19 +720,19 @@ scp -r u0_aXXX@other-sys:test.txt .
 
   ```sh
   echo -n "enter number: "
-  read VAR
+read VAR
   ```
 
 - condition
 
   ```sh
   if [[ condition ]]
-  then
-      commands
-  elif [[ condition  ]]
-  then
-      commands
-  else
-      commands
-  fi
+then
+    commands
+elif [[ condition  ]]
+then
+    commands
+else
+    commands
+fi
   ```
