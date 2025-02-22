@@ -681,3 +681,58 @@ scp -r u0_aXXX@other-sys:test.txt .
 - **bash profile**
 
   similar to  bashrc
+
+### Bash Scripting
+
+- shebang
+
+  ```sh
+  #!/bin/bash
+  ```
+
+- bash scripting check writeable
+
+  ```bash
+  ls -l
+  ```
+
+  - if not writeable
+ 
+    ```bash
+    chmode +x bash_script.sh
+    ```
+
+- run bash script
+
+  ```bash
+  ./bash_script.sh
+  ```
+
+- comparison operator
+
+  - `eq`: equal
+  - `gt`: greater than
+  - `ge`: greater equal
+  - `lt`: less than
+  - `le`: less equal
+
+- get input number and store on VAR
+
+  ```sh
+  echo -n "enter number: "
+  read VAR
+  ```
+
+- condition
+
+  ```sh
+  if [[ condition ]]
+  then
+      commands
+  elif [[ condition  ]]
+  then
+      commands
+  else
+      commands
+  fi
+  ```
