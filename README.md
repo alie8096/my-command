@@ -69,6 +69,15 @@ printf Hello, world | openssl dgst -sha-256sum
 
 ---
 
+## Google Colab
+
+- use from file in google colab
+
+  ```ipynb
+  from google.colab import drive
+drive.mount('/content/drive/')
+  ```
+
 ## Tmux
 
 | Activation | Command |
