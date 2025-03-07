@@ -195,6 +195,20 @@ git commit --amend --no-edit
   git log --all --decorate --online --graph
   ```
 
+
+- Get spesific branch from repo
+
+  ```bash
+  git clone --branch=main https://github.com/username/repo.git
+  ```
+
+- Get spesific commits from repo (for example 01 last commit)
+
+  ```bash
+  git clone --depth 10 https://github.com/username/repo.git
+  ```
+
+
 ---
 
 ## Linux
