@@ -803,3 +803,9 @@ else
     commands
 fi
   ```
+
+- logical operation
+
+  ```sh
+
+  ```
