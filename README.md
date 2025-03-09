@@ -208,6 +208,50 @@ git commit --amend --no-edit
   git clone --depth 10 https://github.com/username/repo.git
   ```
 
+- Local clone repository (from this path to another path locally)
+
+  ```bash
+  git clone repo_path
+  ```
+
+- Show changes with (diff)
+
+  ```bash
+  git diff
+  ```
+
+- Git stash 
+
+  - Save current changes to a specific (accessible) location and go to the last commit
+  (tracted files)
+ 
+    ```bash
+    git add .
+git stash
+    ```
+ 
+  - Save current changes to stash (tracted & untracted files)
+    ```bash
+    git stash -u
+    ```
+ 
+  - Save current changes to stash (tracted & untracted & ignored [all] files)
+ 
+    ```bash
+    git stash -a
+    ```
+
+  - Show stash 
+ 
+    ```bash
+    git stash show
+    ```
+
+  - Reverting stash changes (by stash number)
+ 
+    ```bash
+    git stash pop stash@\{0\}
+    ```
 
 ---
 
