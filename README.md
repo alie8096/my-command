@@ -312,6 +312,12 @@ git stash
     git tag "tag_name" 528a389
     ```
 
+- Git Reflog
+
+
+ ```bash
+ git reflog
+ ```
 ---
 
 ## Linux
