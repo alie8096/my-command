@@ -298,7 +298,19 @@ git stash
   git blame file
   ```
 
+- Git Tag (readable name instead of hash name)
 
+  - Create tag for this commit
+ 
+    ```bash
+    git tag "tag_name"
+    ```
+  
+  - Assigning a tag to another commit based on hash name
+ 
+    ```bash
+    git tag "tag_name" 528a389
+    ```
 
 ---
 
