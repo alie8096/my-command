@@ -155,7 +155,6 @@ drive.mount('/content/drive/')
 
 ## Git
 
-- To clone repository with all branches
 
   ```bash
   git clone <repo-url>
@@ -290,6 +289,14 @@ git stash
     ```bash
     git stash pop stash@\{0\}
     ```
+
+- Git Blame
+
+  `Information about each line of a file`
+
+  ```bash
+  git blame file
+  ```
 
 
 
