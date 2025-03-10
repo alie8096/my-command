@@ -214,11 +214,49 @@ git commit --amend --no-edit
   git clone repo_path
   ```
 
-- Show changes with (diff)
+- Show changes by HEAD commit
 
   ```bash
   git diff
   ```
+
+  OR
+
+  ```bash
+  git diff HEAD
+  ```
+
+- Show changes from the last commit with 5 commits before the HEAD
+
+  ```bash
+  git diff HEAD~5
+  ```
+
+- Show changes from the last commit with 5 commits befor the HEAD for spacial files
+
+  ```bash
+  git diff HEAD~5 file
+  ```
+
+- Git log
+
+  - Simple log
+ 
+    ```bash
+    git log
+    ```
+  
+  - One line
+ 
+    ```bash
+    git log --oneline
+    ```
+
+  - Show graphicaly log
+ 
+    ```bash
+    git log --graph --oneline
+    ```
 
 - Git stash 
 
@@ -252,6 +290,8 @@ git stash
     ```bash
     git stash pop stash@\{0\}
     ```
+
+
 
 ---
 
@@ -617,6 +657,16 @@ scp -r u0_aXXX@other-sys:test.txt .
 
 ---
 
+## Z-shell
+
+- git alias z-shell
+
+  `grafical log`
+
+  ```zsh
+  gloga
+  ```
+
 ## Bash
 
 - `>` : write
@@ -804,8 +854,5 @@ else
 fi
   ```
 
-- logical operation
 
-  ```sh
 
-  ```
