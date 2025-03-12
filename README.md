@@ -318,6 +318,14 @@ git stash
  ```bash
  git reflog
  ```
+
+- Change last commit
+
+  ```bash
+  git add file
+git commit --amend -m "new commit message"
+  ```
+
 ---
 
 ## Linux
