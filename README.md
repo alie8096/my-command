@@ -326,6 +326,31 @@ git stash
 git commit --amend -m "new commit message"
   ```
 
+
+- Git Clean
+
+  - Flags
+    
+    - `i`: intractive
+    - `f`: force
+    - `d`: directory
+    - `n`: file
+    - `x`: ignored files or directories
+
+  - remove file in main path (untracted)
+ 
+    ```bash
+    git clean -n
+    ```
+
+  - remove directory in main path (untracted)
+ 
+    ```bash
+    git clean -d
+    ```
+
+  - 
+
 ---
 
 ## Linux
