@@ -349,8 +349,55 @@ git commit --amend -m "new commit message"
     git clean -d
     ```
 
-  - 
+- Git Revert
 
+  `git revert` is a Git command that reverses the changes of a specific commit by creating a new commit whithout deleting the history.
+
+  ```bash
+  git revert <commit-hash>
+  ```
+
+- Git Reset
+
+  `git reset` resets changes to a previous state ans can modify the commit history.
+
+  - **Type of `git reset`**
+ 
+    1. **soft**(`--soft`): Moves `HEAD` to a previous commit, keeping changes staged.
+
+      ```bash
+      git reset --soft <commit-hash>
+      ```
+
+    2. **Mixed**(`--mixed`) -> *default*: Resets `HEAD` and the staging area but keeps working directory changes.
+
+      ```bash
+      git reset --mixed <commit-hash>
+      ```
+
+    3. **Hard**(`--hard`): Deletes all changes from history, staging area, and working directory( *irreversible!*).
+
+      ```bash
+      git reset --hard <commit-hash>
+      ```
+
+- Git rm
+
+  `git rm` removes files from the working directory and staging area. (Use `git commit` to apply the changes permanently)
+
+  **Usage**
+
+  - Remove a file and stage the deletition.
+
+    ```bash
+    git rm <file>
+    ```
+
+  - Remove from Git but keep it locally.
+
+    ```bash
+    git rm --cached <file>
+    ```
 ---
 
 ## Linux
