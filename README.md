@@ -398,6 +398,36 @@ git commit --amend -m "new commit message"
     ```bash
     git rm --cached <file>
     ```
+
+- Git Remote
+
+  - **SSH**
+
+    - Generate ssh key
+
+      ```bash
+      ssh-keygen
+      ```
+
+    > **Don't share `id_rsa`**
+    > **You can just share `id_rsa.pub`
+
+    - Add SSH in locally system
+
+      ```bash
+      ssh-add path/.ssh/id_rsa
+      ```
+
+    - If you encounter an error while adding SSH, run blow command and follow  description.
+
+      ```bash
+      ssh-agent -s
+      ```
+
+    > **To fun** : show keys of a persen added to github or gitlab with bellow trick
+    > https://github.com/username.keys
+    >
+    > **DON'T SAVE Public keys from a person** because you give him access to the system.
 ---
 
 ## Linux
