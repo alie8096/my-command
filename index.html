@@ -989,8 +989,68 @@ git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w">
 <pre><span></span>git<span class="w"> </span>rm<span class="w"> </span>--cached<span class="w"> </span>&lt;file&gt;
 </pre></div></p>
 </li>
+<li>
+<p>Git Remote</p>
+</li>
+<li>
+<p><strong>SSH</strong></p>
+<ul>
+<li>Generate ssh key</li>
 </ul>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>ssh-keygen
+</pre></div></p>
+<blockquote>
+<p><strong>Don't share <code>id_rsa</code></strong>
+**You can just share <code>id_rsa.pub</code></p>
+</blockquote>
+<ul>
+<li>Add SSH in locally system</li>
+</ul>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>ssh-add<span class="w"> </span>path/.ssh/id_rsa
+</pre></div></p>
+<ul>
+<li>If you encounter an error while adding SSH, run blow command and follow  description.</li>
+</ul>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>ssh-agent<span class="w"> </span>-s
+</pre></div></p>
+<blockquote>
+<p><strong>To fun</strong> : show keys of a persen added to github or gitlab with bellow trick
+https://github.com/username.keys</p>
+<p><strong>DON'T SAVE Public keys from a person</strong> because you give him access to the system.</p>
+</blockquote>
 <hr />
+</li>
+</ul>
 <h2>Linux</h2>
 <ul>
 <li>To mount external hard</li>
@@ -2171,6 +2231,404 @@ ls<span class="w"> </span>-l<span class="w"> </span>&gt;&gt;<span class="w"> </s
 <span class="k">else</span>
 <span class="w">    </span>commands
 <span class="k">fi</span>
+</pre></div>
+
+<h2>Database</h2>
+<h3>Mongo DB</h3>
+<ol>
+<li>Install MongoDB</li>
+<li>Start</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>mongod
+</pre></div>
+
+<ol>
+<li>Enable</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>mongod
+</pre></div>
+
+<ol>
+<li>Run &amp; Test</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>mongosh
+</pre></div>
+
+<ol>
+<li>Exit</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>exit
+</pre></div>
+
+<ul>
+<li>Show all database</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>show dbs
+</pre></div>
+
+<ul>
+<li>Create or Connect Database</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>use my_database
+</pre></div>
+
+<ul>
+<li>Create Collecation</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.createCollection(&quot;collection_name&quot;)
+</pre></div>
+
+<ul>
+<li>Show Collections</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>show collections
+</pre></div>
+
+<ul>
+<li>Current Database</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db
+</pre></div>
+
+<ul>
+<li>Remove Database</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.dropDatabase()
+</pre></div>
+
+<ul>
+<li>Remove Collection</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.drop()
+</pre></div>
+
+<ul>
+<li>Add Data to collection</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.insert({
+  name: &#39;ali&#39;,
+  age: 23,
+  salary: 5000
+})
+</pre></div>
+
+<ul>
+<li>Show all documents of a collection</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.find({})
+</pre></div>
+
+<p>OR</p>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.find({}).pretty()
+</pre></div>
+
+<ul>
+<li>Show all documents in a collecation that contain condition</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.find({name: &quot;value&quot;})
+</pre></div>
+
+<ul>
+<li>Show one field in all document from collecation</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.find({condition}, age:1, _id:0)
+</pre></div>
+
+<ul>
+<li>Show document with limited results </li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.find({}).limit(4)
+</pre></div>
+
+<ul>
+<li>Show documents and ignored numbers of first result</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.find({}).skip(2)
+</pre></div>
+
+<ul>
+<li>
+<p>Show documents with multi conditions</p>
+</li>
+<li>
+<p>AND</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">mongodb</span>
+    </div>
+<pre><span></span>db.collection_name.find({age: 25, nmae: &quot;ali&quot;})
+</pre></div></p>
+</li>
+<li>
+<p>OR</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">mongodb</span>
+    </div>
+<pre><span></span>db.collection_name.find($or[{age: 30}, {name: &quot;mahdi&quot;}])
+</pre></div></p>
+</li>
+<li>
+<p>Greater Than or Less Than</p>
+<ul>
+<li><code>$gt</code>  -&gt; greater than</li>
+<li><code>$lt</code>  -&gt; less than</li>
+<li><code>$gte</code> -&gt; greater than equal</li>
+<li><code>$lte</code> -&gt; less than equal</li>
+<li><code>$ne</code>  -&gt; not equal</li>
+</ul>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">mongodb</span>
+    </div>
+<pre><span></span>db.collection_name.find({age: {$gt: 15}})
+</pre></div></p>
+</li>
+<li>
+<p>Update document</p>
+</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.update({condition}, {$set:{age: 43}})
+</pre></div>
+
+<ul>
+<li>Remove Objects contains similar values</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.remove({column:value})
+</pre></div>
+
+<ul>
+<li>Remove spacial objects</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">mongodb</span>
+        </div>
+    <pre><span></span>db.collection_name.remove({_id: ObjectId(&quot;shaID&quot;)})
 </pre></div>
             </div>
         </div>
