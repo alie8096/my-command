@@ -960,4 +960,163 @@ fi
   ```
 
 
+## Database
 
+### Mongo DB
+
+1. Install MongoDB
+2. Start
+
+  ```bash
+  sudo systemctl start mongod
+  ```
+
+3. Enable
+
+  ```bash
+  sudo systemctl enable mongod
+  ```
+
+4. Run & Test
+
+  ```bash
+  mongosh
+  ```
+
+5. Exit
+
+  ```mongodb
+  exit
+  ```
+
+- Show all database
+
+  ```mongodb
+  show dbs
+  ```
+
+- Create or Connect Database
+
+  ```mongodb
+  use my_database
+  ```
+
+- Create Collecation
+
+  ```mongodb
+  db.createCollection("collection_name")
+  ```
+
+- Show Collections
+
+  ```mongodb
+  show collections
+  ```
+
+- Current Database
+
+  ```mongodb
+  db
+  ```
+
+- Remove Database
+
+  ```mongodb
+  db.dropDatabase()
+  ```
+
+- Remove Collection
+
+  ```mongodb
+  db.collection_name.drop()
+  ```
+
+- Add Data to collection
+
+  ```mongodb
+  db.collection_name.insert({
+  name: 'ali',
+  age: 23,
+  salary: 5000
+})
+  ```
+
+- Show all documents of a collection
+
+  ```mongodb
+  db.collection_name.find({})
+  ```
+
+  OR
+
+  ```mongodb
+  db.collection_name.find({}).pretty()
+  ```
+
+- Show all documents in a collecation that contain condition
+
+  ```mongodb
+  db.collection_name.find({name: "value"})
+  ```
+
+- Show one field in all document from collecation
+
+  ```mongodb
+  db.collection_name.find({condition}, age:1, _id:0)
+  ```
+
+- Show document with limited results 
+
+  ```mongodb
+  db.collection_name.find({}).limit(4)
+  ```
+
+- Show documents and ignored numbers of first result
+
+  ```mongodb
+  db.collection_name.find({}).skip(2)
+  ```
+
+- Show documents with multi conditions
+
+  - AND
+
+    ```mongodb
+    db.collection_name.find({age: 25, nmae: "ali"})
+    ```
+
+  - OR
+
+    ```mongodb
+    db.collection_name.find($or[{age: 30}, {name: "mahdi"}])
+    ```
+
+  - Greater Than or Less Than
+
+    - `$gt`  -> greater than
+    - `$lt`  -> less than
+    - `$gte` -> greater than equal
+    - `$lte` -> less than equal
+    - `$ne`  -> not equal
+
+    ```mongodb
+    db.collection_name.find({age: {$gt: 15}})
+    ```
+
+- Update document
+
+  ```mongodb
+  db.collection_name.update({condition}, {$set:{age: 43}})
+  ```
+
+- Remove Objects contains similar values
+
+  ```mongodb
+  db.collection_name.remove({column:value})
+  ```
+
+- Remove spacial objects
+
+  ```mongodb
+  db.collection_name.remove({_id: ObjectId("shaID")})
+  ```
