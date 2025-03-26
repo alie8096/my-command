@@ -524,6 +524,11 @@ git merge branch1
 
 ## Linux
 
+- To find current path
+
+  ```bash
+  pwd
+  ```
 
 - To mount external hard
 
@@ -1242,6 +1247,17 @@ fi
   ```mongodb
   db.collection_name.remove({_id: ObjectId("shaID")})
   ```
+## Jupyter Notebook
+
+- Write and create file by jupyter
+
+  ```ipynb
+  %%writefile file.txt
+this is first line from  content to write into the file
+this is second line for writing into file.
+...
+this is last line to write into the file.
+  ```
 
 ## Python
 
@@ -1315,7 +1331,7 @@ print(arr[...])
 
     > **`HINT`**: Use `Ctrl + z` to end writing and copying into the file.
 
-  ```cmd
+  ```bat
   copy con file.txt
 This is my text for copying to file.
 this is seconde line for copying to file.
@@ -1328,13 +1344,13 @@ this is a last line to copeing into file.
 
 - Read content a file in `CMD`
 
-  ```cmd
+  ```bat
   copy file.txt con
   ```
 
   output
 
-  ```cmd
+  ```bat
   This is my text for copying to file.
 this is seconde line for copying to file.
 ...
