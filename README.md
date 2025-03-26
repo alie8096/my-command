@@ -1308,3 +1308,37 @@ print(arr[...])
        [7, 8, 9]])
   ```
 
+
+## Windows
+
+- Write text into a file by `CMD`
+
+    > **`HINT`**: Use `Ctrl + z` to end writing and copying into the file.
+
+  ```cmd
+  copy con file.txt
+This is my text for copying to file.
+this is seconde line for copying to file.
+...
+...
+...
+this is a last line to copeing into file.
+^Z
+  ```
+
+- Read content a file in `CMD`
+
+  ```cmd
+  copy file.txt con
+  ```
+
+  output
+
+  ```cmd
+  This is my text for copying to file.
+this is seconde line for copying to file.
+...
+...
+...
+this is a last line to copeing into file.
+  ```
