@@ -27,14 +27,6 @@ git fetch --all && git pull origin '*:*'
 sudo dpkg -i package.deb
 ```
 
-## Merge two branch
-
-`merge branch 2 to branch 1`
-
-```bash
-git merge branch2
-```
-
 ## Display or Check SHA256 checksum
 
 `Display and check hash of a file or text`
@@ -180,12 +172,6 @@ drive.mount('/content/drive/')
   ```bash
   git add .
 git commit --amend --no-edit
-  ```
-
-- To check status of the commits
-
-  ```bash
-  git branch --verbose
   ```
 
 - Show graphically git log
@@ -450,6 +436,87 @@ git commit --amend -m "new commit message"
     git push -u origin new_branch
     ```
  
+- Git Checkout
+
+  - Create Branch
+
+    ```bash
+    git checkout -b branch_name
+    ```
+
+  - Change branch
+
+    ```bash
+    git chekout branch
+    ```
+
+- Git Rebase
+  - An interactive way to modify commit history, allowing you to edit, reoeder, squash, or delet commits.
+
+    | Command | Short Command | Description |
+    | --- | --- | --- |
+    | `pick` | `p` | Keep the commit unchanged in history(default). |
+    | `reword` | `r` |  Allows you to modify the commit messge. |
+    | `edit` | `e` | Pauses the rebase process so you can modify the commit (1.g., edit files of add changes). |
+    | `squash` | `s` | Merge this commit with the previous commit message unchanged. |
+    | `fixup` | `f` |  Similar to `squash`, but it keeps the previous commit message unchanged. |
+    | `drop` | `d` | Removes the commit from history. |
+    | `exec` | `x` | Runs a shell command during the rebase process. |
+
+
+    ```bash
+    git rebase -i HEAD~n
+    ```
+
+- Git Merge
+
+  - Merge two branch (branch1 with main)
+
+    ```bash
+    git checkout main
+git merge branch1
+    ```
+
+
+- Git Branch
+
+  - Create branch
+
+    ```bash
+    git switch -C branch_name
+    ```
+
+    OR
+
+    ```bash
+    git checkout -b branch_name
+    ```
+
+  - To check status of the commits
+
+    ```bash
+    git branch --verbose
+    ```
+
+  - Show list of branches
+
+    ```bash
+    git branch
+    ```
+
+  - Remeove branch
+
+    ```bash
+    git branch -d branch_name
+    ```
+
+- Git Cherry Pick
+
+  - `cherry-pick`: Select specific commit from another branch and applies them to the current branch.
+
+    ```bash
+    git cherry-pick <commit-hash>
+    ```
 
 ---
 
