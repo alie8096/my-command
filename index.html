@@ -68,21 +68,6 @@
     <pre><span></span>sudo<span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>package.deb
 </pre></div>
 
-<h2>Merge two branch</h2>
-<p><code>merge branch 2 to branch 1</code></p>
-<div class="code-box">
-        <div class="code-info">
-            <div class="code-icon">
-                <button class="copy-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
-                    <span>Copy code</span>
-                </button>
-            </div>
-            <span class="language">bash</span>
-        </div>
-    <pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>branch2
-</pre></div>
-
 <h2>Display or Check SHA256 checksum</h2>
 <p><code>Display and check hash of a file or text</code></p>
 <hr />
@@ -478,22 +463,6 @@ drive.mount(&#39;/content/drive/&#39;)
         </div>
     <pre><span></span>git<span class="w"> </span>add<span class="w"> </span>.
 git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w"> </span>--no-edit
-</pre></div>
-
-<ul>
-<li>To check status of the commits</li>
-</ul>
-<div class="code-box">
-        <div class="code-info">
-            <div class="code-icon">
-                <button class="copy-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
-                    <span>Copy code</span>
-                </button>
-            </div>
-            <span class="language">bash</span>
-        </div>
-    <pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>--verbose
 </pre></div>
 
 <ul>
@@ -1048,9 +1017,267 @@ git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w">
 https://github.com/username.keys</p>
 <p><strong>DON'T SAVE Public keys from a person</strong> because you give him access to the system.</p>
 </blockquote>
-<hr />
+</li>
+<li>
+<p>Show remote</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>remote
+</pre></div></p>
+</li>
+<li>
+<p>Set remote</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>git@github.com:username/repo.git
+</pre></div></p>
+</li>
+<li>
+<p>Git Push</p>
+</li>
+<li>
+<p>Push changes after seting up the remote when repository doesn't have this branch (Set up strem)</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>new_branch
+</pre></div></p>
+</li>
+<li>
+<p>Git Checkout</p>
+</li>
+<li>
+<p>Create Branch</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch_name
+</pre></div></p>
+</li>
+<li>
+<p>Change branch</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>chekout<span class="w"> </span>branch
+</pre></div></p>
+</li>
+<li>
+<p>Git Rebase</p>
+</li>
+<li>
+<p>An interactive way to modify commit history, allowing you to edit, reoeder, squash, or delet commits.</p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Short Command</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pick</code></td>
+<td><code>p</code></td>
+<td>Keep the commit unchanged in history(default).</td>
+</tr>
+<tr>
+<td><code>reword</code></td>
+<td><code>r</code></td>
+<td>Allows you to modify the commit messge.</td>
+</tr>
+<tr>
+<td><code>edit</code></td>
+<td><code>e</code></td>
+<td>Pauses the rebase process so you can modify the commit (1.g., edit files of add changes).</td>
+</tr>
+<tr>
+<td><code>squash</code></td>
+<td><code>s</code></td>
+<td>Merge this commit with the previous commit message unchanged.</td>
+</tr>
+<tr>
+<td><code>fixup</code></td>
+<td><code>f</code></td>
+<td>Similar to <code>squash</code>, but it keeps the previous commit message unchanged.</td>
+</tr>
+<tr>
+<td><code>drop</code></td>
+<td><code>d</code></td>
+<td>Removes the commit from history.</td>
+</tr>
+<tr>
+<td><code>exec</code></td>
+<td><code>x</code></td>
+<td>Runs a shell command during the rebase process.</td>
+</tr>
+</tbody>
+</table>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>rebase<span class="w"> </span>-i<span class="w"> </span>HEAD~n
+</pre></div></p>
+</li>
+<li>
+<p>Git Merge</p>
+</li>
+<li>
+<p>Merge two branch (branch1 with main)</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>merge<span class="w"> </span>branch1
+</pre></div></p>
+</li>
+<li>
+<p>Git Branch</p>
+</li>
+<li>
+<p>Create branch</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>switch<span class="w"> </span>-C<span class="w"> </span>branch_name
+</pre></div></p>
+<p>OR</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>branch_name
+</pre></div></p>
+</li>
+<li>
+<p>To check status of the commits</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>--verbose
+</pre></div></p>
+</li>
+<li>
+<p>Show list of branches</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>branch
+</pre></div></p>
+</li>
+<li>
+<p>Remeove branch</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>branch_name
+</pre></div></p>
+</li>
+<li>
+<p>Git Cherry Pick</p>
+</li>
+<li>
+<p><code>cherry-pick</code>: Select specific commit from another branch and applies them to the current branch.</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">bash</span>
+    </div>
+<pre><span></span>git<span class="w"> </span>cherry-pick<span class="w"> </span>&lt;commit-hash&gt;
+</pre></div></p>
 </li>
 </ul>
+<hr />
 <h2>Linux</h2>
 <ul>
 <li>To mount external hard</li>
