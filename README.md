@@ -396,6 +396,7 @@ git commit --amend -m "new commit message"
       ```
 
     > **Don't share `id_rsa`**
+    >
     > **You can just share `id_rsa.pub`
 
     - Add SSH in locally system
@@ -411,6 +412,7 @@ git commit --amend -m "new commit message"
       ```
 
     > **To fun** : show keys of a persen added to github or gitlab with bellow trick
+    >
     > https://github.com/username.keys
     >
     > **DON'T SAVE Public keys from a person** because you give him access to the system.
@@ -1240,3 +1242,69 @@ fi
   ```mongodb
   db.collection_name.remove({_id: ObjectId("shaID")})
   ```
+
+## Python
+
+- Precendence & Associativity of Arithmetic Operators
+
+   | Periority | Operators | Associativity |
+   | --- | --- | --- |
+   | 1 | () | Left to Right |
+   | 2 | ** | Right to Left |
+   | 3 | +x and -x | Left to Right |
+   | 4 | *, /, //, and % | Left to Right |
+   | 5 | + and - | Left to Right |
+
+- **Tips**
+
+    - The output of division in Python is decimal number.
+
+      ```py
+      30 / 2  
+>>> 15.0
+      ```
+
+    - Write large numbers in Python for convenience with underescores
+
+    ```py
+    1_000_000_000
+>>> 1000000000
+    ```
+
+- Get and remove last value from list
+
+  ```py
+  lst = ["Ali", "Mohammad", "Mahdi"]
+name1 = lst.pop()
+
+print(name1)
+>>> Mahdi
+
+print(name1 is lst)
+>>> False
+
+print(lst)
+>>> ['Ali', 'Mohammad']
+  ```
+
+
+### Numpy
+
+- Get All rows and columns from a matrix
+
+  ```py
+  import numpy as np
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+])
+
+print(arr[...])
+
+>>> array([[1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]])
+  ```
+
