@@ -428,6 +428,29 @@ git commit --amend -m "new commit message"
     > https://github.com/username.keys
     >
     > **DON'T SAVE Public keys from a person** because you give him access to the system.
+
+
+  - Show remote
+
+    ```bash
+    git remote
+    ```
+
+  - Set remote
+
+    ```bash
+    git remote add origin git@github.com:username/repo.git
+    ```
+
+- Git Push
+
+  - Push changes after seting up the remote when repository doesn't have this branch (Set up strem)
+
+    ```bash
+    git push -u origin new_branch
+    ```
+ 
+
 ---
 
 ## Linux
