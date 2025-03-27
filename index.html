@@ -979,8 +979,8 @@ git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w">
 <pre><span></span>ssh-keygen
 </pre></div></p>
 <blockquote>
-<p><strong>Don't share <code>id_rsa</code></strong>
-**You can just share <code>id_rsa.pub</code></p>
+<p><strong>Don't share <code>id_rsa</code></strong></p>
+<p>**You can just share <code>id_rsa.pub</code></p>
 </blockquote>
 <ul>
 <li>Add SSH in locally system</li>
@@ -1013,8 +1013,8 @@ git<span class="w"> </span>commit<span class="w"> </span>--amend<span class="w">
 <pre><span></span>ssh-agent<span class="w"> </span>-s
 </pre></div></p>
 <blockquote>
-<p><strong>To fun</strong> : show keys of a persen added to github or gitlab with bellow trick
-https://github.com/username.keys</p>
+<p><strong>To fun</strong> : show keys of a persen added to github or gitlab with bellow trick</p>
+<p>https://github.com/username.keys</p>
 <p><strong>DON'T SAVE Public keys from a person</strong> because you give him access to the system.</p>
 </blockquote>
 </li>
@@ -1279,6 +1279,22 @@ git<span class="w"> </span>merge<span class="w"> </span>branch1
 </ul>
 <hr />
 <h2>Linux</h2>
+<ul>
+<li>To find current path</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span><span class="nb">pwd</span>
+</pre></div>
+
 <ul>
 <li>To mount external hard</li>
 </ul>
@@ -2856,6 +2872,275 @@ ls<span class="w"> </span>-l<span class="w"> </span>&gt;&gt;<span class="w"> </s
             <span class="language">mongodb</span>
         </div>
     <pre><span></span>db.collection_name.remove({_id: ObjectId(&quot;shaID&quot;)})
+</pre></div>
+
+<h2>Jupyter Notebook</h2>
+<ul>
+<li>Write and create file by jupyter</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">ipynb</span>
+        </div>
+    <pre><span></span>%%writefile file.txt
+this is first line from  content to write into the file
+this is second line for writing into file.
+...
+this is last line to write into the file.
+</pre></div>
+
+<h2>Python</h2>
+<ul>
+<li>Precendence &amp; Associativity of Arithmetic Operators</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Periority</th>
+<th>Operators</th>
+<th>Associativity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>()</td>
+<td>Left to Right</td>
+</tr>
+<tr>
+<td>2</td>
+<td>**</td>
+<td>Right to Left</td>
+</tr>
+<tr>
+<td>3</td>
+<td>+x and -x</td>
+<td>Left to Right</td>
+</tr>
+<tr>
+<td>4</td>
+<td>*, /, //, and %</td>
+<td>Left to Right</td>
+</tr>
+<tr>
+<td>5</td>
+<td>+ and -</td>
+<td>Left to Right</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p><strong>Tips</strong></p>
+<ul>
+<li>The output of division in Python is decimal number.</li>
+</ul>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">py</span>
+    </div>
+<pre><span></span><span class="mi">30</span> <span class="o">/</span> <span class="mi">2</span><br />
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">15.0</span>
+</pre></div></p>
+<ul>
+<li>Write large numbers in Python for convenience with underescores</li>
+</ul>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">py</span>
+    </div>
+<pre><span></span><span class="mi">1_000_000_000</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1000000000</span>
+</pre></div></p>
+</li>
+<li>
+<p>Get and remove last value from list</p>
+</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">py</span>
+        </div>
+    <pre><span></span><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Ali&quot;</span><span class="p">,</span> <span class="s2">&quot;Mohammad&quot;</span><span class="p">,</span> <span class="s2">&quot;Mahdi&quot;</span><span class="p">]</span>
+<span class="n">name1</span> <span class="o">=</span> <span class="n">lst</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Mahdi</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">name1</span> <span class="ow">is</span> <span class="n">lst</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kc">False</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="p">[</span><span class="s1">&#39;Ali&#39;</span><span class="p">,</span> <span class="s1">&#39;Mohammad&#39;</span><span class="p">]</span>
+</pre></div>
+
+<ul>
+<li>Infinite Loop</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">py</span>
+        </div>
+    <pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="k">if</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;runing&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+</pre></div>
+
+<p>OR</p>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">py</span>
+        </div>
+    <pre><span></span><span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="mi">2</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;runing&quot;</span><span class="p">)</span>
+    <span class="k">break</span>
+</pre></div>
+
+<h3>Numpy</h3>
+<ul>
+<li>Get All rows and columns from a matrix</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">py</span>
+        </div>
+    <pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
+<span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+       <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">]])</span>
+</pre></div>
+
+<h2>Windows</h2>
+<ul>
+<li>
+<p>Write text into a file by <code>CMD</code></p>
+<blockquote>
+<p><strong><code>HINT</code></strong>: Use <code>Ctrl + z</code> to end writing and copying into the file.</p>
+</blockquote>
+</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bat</span>
+        </div>
+    <pre><span></span><span class="k">copy</span> con file.txt
+This is my text for copying to file.
+this is seconde line for copying to file.
+...
+...
+...
+this is a last line to copeing into file.
+<span class="se">^Z</span>
+</pre></div>
+
+<ul>
+<li>Read content a file in <code>CMD</code></li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bat</span>
+        </div>
+    <pre><span></span><span class="k">copy</span> file.txt con
+</pre></div>
+
+<p>output</p>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bat</span>
+        </div>
+    <pre><span></span>This is my text for copying to file.
+this is seconde line for copying to file.
+...
+...
+...
+this is a last line to copeing into file.
+</pre></div>
+
+<ul>
+<li>Delet file by <code>CMD</code></li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bat</span>
+        </div>
+    <pre><span></span><span class="k">del</span> file.txt
 </pre></div>
             </div>
         </div>
