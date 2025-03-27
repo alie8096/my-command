@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نمودار درختی شبیه به GitLens</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .git-tree {
+      position: relative;
+      padding-left: 20px;
+    }
+
+    .git-tree ul {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+    }
+
+    .git-tree li {
+      position: relative;
+      padding-left: 30px;
+      margin: 10px 0;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .git-tree li span {
+      display: inline-block;
+      padding: 5px 15px;
+      background-color: #007bff;
+      color: white;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .git-tree li span:hover {
+      background-color: #0056b3;
+    }
+
+    .git-tree li:before {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      background-color: #007bff;
+      border-radius: 50%;
+    }
+
+    .git-tree li:after {
+      content: "";
+      position: absolute;
+      left: 10px;
+      top: 5px;
+      width: 2px;
+      height: 100%;
+      background-color: #007bff;
+    }
+
+    .git-tree ul ul {
+      display: none;
+    }
+
+    .git-tree li.open > ul {
+      display: block;
+    }
+
+    .git-tree li.open > span {
+      background-color: #80deea;
+    }
+
+    /* Style for the "last" child */
+    .git-tree li:last-child:after {
+      height: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>نمودار درختی شبیه به GitLens</h1>
+
+  <div class="git-tree">
+    <ul>
+      <li class="open">
+        <span>نقشه‌برداری در راه‌سازی</span>
+        <ul>
+          <li>
+            <span>مفاهیم پایه</span>
+            <ul>
+              <li><span>سیستم‌های مختصات</span></li>
+              <li><span>انواع نقشه‌ها</span></li>
+              <li><span>مقیاس‌ها</span></li>
+              <li><span>ژئودزی</span></li>
+            </ul>
+          </li>
+          <li>
+            <span>سیستم‌های مختصات</span>
+            <ul>
+              <li><span>سیستم UTM</span></li>
+              <li><span>سیستم مختصات جغرافیایی</span></li>
+            </ul>
+          </li>
+          <li>
+            <span>ابزارها و تجهیزات</span>
+            <ul>
+              <li><span>توتال استیشن</span></li>
+              <li><span>GPS و GNSS</span></li>
+              <li><span>متر لیزری</span></li>
+              <li><span>ترازیاب</span></li>
+            </ul>
+          </li>
+          <li>
+            <span>مهارت‌های عملی</span>
+            <ul>
+              <li><span>برداشت نقاط</span></li>
+              <li><span>ترازیابی طولی و عرضی</span></li>
+              <li><span>ترسیم پروفیل‌ها</span></li>
+              <li><span>محاسبه حجم عملیات خاکی</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    // Functionality to toggle the visibility of nested branches
+    document.querySelectorAll('.git-tree li > span').forEach(item => {
+      item.addEventListener('click', function () {
+        this.parentNode.classList.toggle('open');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
