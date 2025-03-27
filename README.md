@@ -1303,6 +1303,24 @@ print(lst)
 >>> ['Ali', 'Mohammad']
   ```
 
+- Infinite Loop
+
+  ```py
+  while True:
+    if 2 < 3:
+        print("runing")
+    break
+  ```
+
+  OR
+
+  ```py
+  while 1:
+    if 2 < 3:
+        print("runing")
+    break
+  ```
+
 
 ### Numpy
 
@@ -1357,4 +1375,10 @@ this is seconde line for copying to file.
 ...
 ...
 this is a last line to copeing into file.
+  ```
+
+- Delet file by `CMD`
+
+  ```bat
+  del file.txt
   ```
