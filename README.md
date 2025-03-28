@@ -1065,14 +1065,51 @@ ls -l >> new_log
   - `lt`: less than
   - `le`: less equal
 
-- get input number and store on VAR
+### Comment line in bash scripting
+
+- Single line
+
+  ```sh
+  # line
+  ```
+
+- Multy line
+
+  ```sh
+  : "
+  line1
+  line2
+  line3
+  ...
+  end line
+  "
+  ```
+
+- Printf formatting
+
+  | Specifier | Description |
+  | --- | --- |
+  | %% | Prints "%" symbol |
+  | %c | Takes arguments as a single character |
+  | %e & %E | Take argument in floating-point number and prints in exponential notation, %e for lower case letter and %E for capital letter |
+  | %g & %G | Take argument in floating-point number and prints in normal or exponential notation |
+  | %f | Takes argument as floting number |
+  | %d | Takes arguments as signed integers |
+  |%u | Takes arguments as unsigned integers |
+  | %o | Takes argument as an unsigned octal number |
+  | %x & %X | Takes arguments as unsigned hexadecimal integers |
+
+
+### Get Input
+
+- Get input number and store on VAR
 
   ```sh
   echo -n "enter number: "
 read VAR
   ```
 
-- condition
+### Condition
 
   ```sh
   if [[ condition ]]
@@ -1086,6 +1123,51 @@ else
 fi
   ```
 
+### For Loop
+
+- Structure
+
+  ```sh
+  for var in item1 item2 item3
+do
+  commands
+done
+  ```
+
+- For in the range
+
+  ```sh
+  for num in {start..end..step}
+do
+  commands
+done
+  ```
+
+#### Brake Loop
+
+- Continue
+
+  ```sh
+  for i in {1..5};do
+  if [[ $i == 2 ]];then
+    continue
+  fi
+  
+  echo "Number: $i"
+done
+  ```
+
+- Break
+
+  ```sh
+  for i in {1..5};do
+  if [[ $i == 2 ]];then
+    break
+  fi
+  
+  echo "Number: $i"
+done
+  ```
 
 ## Database
 
