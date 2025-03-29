@@ -985,7 +985,7 @@ export MYVARFILE=/home/path
   ```
  
   adding alias command
-  
+
   ```bash
   # User specific aliases and function
 alias mydir="cd $MYVAR; ls -aF"
@@ -1031,7 +1031,7 @@ ls -l >> new_log
 
   similar to  bashrc
 
-### Bash Scripting
+## Bash Scripting
 
 - shebang
 
@@ -1168,6 +1168,43 @@ done
   echo "Number: $i"
 done
   ```
+
+### While Loop
+
+- Structure
+
+  ```sh
+  i=0
+
+  while [ Loop break condition ]
+do
+  commands
+  (( i++ ))
+done
+  ```
+
+- Infinite Loop
+
+  ```sh
+  while :
+do
+  commands
+
+  loop_break_condition
+done
+  ```
+
+### Read File
+
+```sh
+file=path/file
+
+while read -r line
+do
+  echo $line
+done
+```
+
 
 ## Database
 
