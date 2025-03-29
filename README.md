@@ -1205,6 +1205,28 @@ do
 done
 ```
 
+### Args
+
+- Get Arguments
+
+  ```sh
+  args=("$@")
+
+echo ${args[0]} ${args[1]}
+  ```
+
+- All Arguments
+
+  ```sh
+  echo $@
+  ```
+
+- Number of Arguments
+
+  ```sh
+  echo $#
+  ```
+
 
 ## Database
 
