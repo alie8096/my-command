@@ -1227,6 +1227,29 @@ echo ${args[0]} ${args[1]}
   echo $#
   ```
 
+### Array
+
+- Make Array
+
+  ```sh
+  array=("item1" "item2" "item3" "item4")
+  ```
+
+- Geting the data from array
+
+  > Use **`@`** to get all elements
+  >
+  > Use **`!`** to get index of elements
+  >
+  > Use **`#`** to get the number of elements
+
+
+  ```sh
+  echo "${array[@]}"
+  echo "${!array[@]}"
+  echo "${#array[@]}"
+  ```
+
 
 ## Database
 
