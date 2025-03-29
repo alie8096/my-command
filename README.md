@@ -1318,6 +1318,32 @@ variable="$(func_name)"
 echo "$variable"
   ```
 
+- Send argumanet to function
+
+  ```sh
+  func() {
+  echo "hello, $1"
+}
+
+func "name"
+  ```
+
+- Use argv as function argument
+
+  ```sh
+  func() {
+  echo "hello, $1"
+}
+
+func $1
+  ```
+
+  output
+
+  ```bash
+  app_name.sh ali
+hello, ali
+  ```
 
 
 ## Database
