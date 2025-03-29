@@ -1109,6 +1109,13 @@ ls -l >> new_log
 read VAR
   ```
 
+- Get string input
+
+  ```sh
+  echo "enter name: "
+read name
+  ```
+
 ### Condition
 
   ```sh
@@ -1249,6 +1256,68 @@ echo ${args[0]} ${args[1]}
   echo "${!array[@]}"
   echo "${#array[@]}"
   ```
+
+### Function
+
+- Structure
+
+  ```sh
+  function_name() {
+    commands
+}
+
+function_name
+  ```
+
+- Return value
+
+  ```sh
+  func_name() {
+  echo "value"
+  return 12
+}
+
+func_name
+  ```
+
+  output
+
+  ```bash
+  value
+  ```
+
+  > Use $? to get numeric reterned vale
+
+  ```sh
+  func_name() {
+  echo "value"
+  return 12
+}
+
+func_name
+echo $?
+  ```
+
+  output
+
+  ```bash
+  value
+  12
+  ```
+
+- Get value from function
+
+  ```sh
+  func_name() {
+  local var="Linux"
+  echo $var
+}
+
+variable="$(func_name)"
+
+echo "$variable"
+  ```
+
 
 
 ## Database
