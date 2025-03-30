@@ -86,6 +86,25 @@ drive.mount('/content/drive/')
 
 ---
 
+## Zellij
+
+| Activation | Command |
+| --- | --- |
+| Zoomout window | ``Ctrl + b + z``   |
+| Vertical division window | ``Ctrl + b + %`` |
+| Horizontal division window | ``Ctrl + b + "`` |
+| Close a window | ``Ctrl + p + x`` |
+| Switching bitween windows | ``Ctrl + b + ⭠ ⭡ ⭣ ⭢`` |
+| Switching bitween windows | ``Alt + ⭠ ⭡ ⭣ ⭢`` |
+| Resizing window | ``Ctrl + n + ⭠ ⭡ ⭣ ⭢`` |
+| Rename window | ``Ctrl + p + c`` |
+| Manager | ``Ctrl + o + w`` |
+| Change Horizontal/Vertical windows | ``Ctrl + Space`` |
+| Floating window | ``Alt + f`` |
+| Resize window | 
+
+---
+
 ## Vim
 
 | Description | Command | Description |
@@ -316,7 +335,7 @@ git commit --amend -m "new commit message"
 - Git Clean
 
   - Flags
-    
+ 
     - `i`: intractive
     - `f`: force
     - `d`: directory
@@ -524,6 +543,18 @@ git merge branch1
 
 ## Linux
 
+- To show information of sytem
+
+  > `w` is the shortest linux command.
+
+  ```bash
+  w
+  ```
+
+  > `who` is similar to `w` command but shorter.
+
+- Use ``Ctrl + r`` to search in the history of last commands.
+
 - To find current path
 
   ```bash
@@ -653,6 +684,165 @@ git merge branch1
 scp -r u0_aXXX@other-sys:test.txt .
 ```
 
+### User Management
+
+#### **Users**
+
+- Adding new user
+
+  ```bash
+  sudo useradd <username>
+  ```
+
+- Set password to new user
+
+  ```bash
+  sudo passwd <username>
+  ```
+- Go to new user
+
+  ```bash
+  su - <username>
+  ```
+
+- Logout from user
+
+  ```bash
+  exit
+  ```
+
+- Delete user
+
+  ```bash
+  ps -u <username>
+  ```
+
+  ```bash
+  sudo kill -9 <PID>
+sudo pkill -u <username>
+sudo killall -u <username>
+  ```
+
+  ```bash
+  sudo userdel -r <username>
+  ```
+
+- User defaults
+
+  ```bash
+  useradd -D
+  ```
+
+  > GROUP=100
+  >
+  > HOME=/home
+  >
+  > INACTIVE=-1
+  >
+  > EXPIRE=
+  >
+  > SHELL=/bin/sh
+  >
+  > SKEL=/etc/skel
+  >
+  > CREATE_MAIL_SPOOL=no
+  >
+  > LOG_INIT=yes
+
+- Show and edit default useradd config
+
+  ```bash
+  sudo vim /etc/default/useradd
+  ```
+
+- Show and edit default configs
+
+  ```bash
+  sudo vim /etc/login.defs
+  ```
+
+
+#### **Groups**
+
+- Show all groups
+
+  ```bash
+  groups
+  ```
+
+- Add new groups
+
+  ```bash
+  sudo groupadd <group_name>
+  ```
+
+- Changing the group of user
+
+  ```bash
+  sudo usermod -G <new-group> <username>
+  ```
+
+- Append the user to the supplemental GROUS 
+
+  ```bash
+  sudo usermod -aG <new-group> <username>
+  ```
+
+- Removing group from user
+
+  ```bash
+  sudo groupdel <group-name>
+  ```
+
+
+#### **Login**
+
+- Show logins
+
+  ```bash
+  loginctl
+  ```
+
+- Change Age (change time of stay in system)
+
+  ```bash
+  chage <username>
+  ```
+
+  > Can change:
+  >
+  > Minimum Password Age [0]:
+  >
+  > Maximum Password Age [99999]: 
+  >
+  > Last Password Change (YYYY-MM-DD) [2025-04-30]:
+  >
+  > Password Expiration Warning [7]:
+  >
+  > Password Inactive [-1]:
+  >
+  > Acount Expiration Date (YYYY-MM-DD) [-1]:
+
+
+#### **Password Manager**
+
+- Unlocking the password of an user
+
+  ```bash
+  sudo passwd -uf <username>
+  ```
+
+- Locking the password af an user
+
+  ```bash
+  sudo passwd -l <username>
+  ```
+
+- Changing the password with stdin
+
+  ```bash
+  echo "password" | passwd --stdin <username>
+  ```
 ---
 
 ## Emmet (HTML-CSS)
