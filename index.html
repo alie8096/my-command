@@ -199,6 +199,66 @@ drive.mount(&#39;/content/drive/&#39;)
 </tbody>
 </table>
 <hr />
+<h2>Zellij</h2>
+<table>
+<thead>
+<tr>
+<th>Activation</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Zoomout window</td>
+<td><code>Ctrl + b + z</code></td>
+</tr>
+<tr>
+<td>Vertical division window</td>
+<td><code>Ctrl + b + %</code></td>
+</tr>
+<tr>
+<td>Horizontal division window</td>
+<td><code>Ctrl + b + "</code></td>
+</tr>
+<tr>
+<td>Close a window</td>
+<td><code>Ctrl + p + x</code></td>
+</tr>
+<tr>
+<td>Switching bitween windows</td>
+<td><code>Ctrl + b + ⭠ ⭡ ⭣ ⭢</code></td>
+</tr>
+<tr>
+<td>Switching bitween windows</td>
+<td><code>Alt + ⭠ ⭡ ⭣ ⭢</code></td>
+</tr>
+<tr>
+<td>Resizing window</td>
+<td><code>Ctrl + n + ⭠ ⭡ ⭣ ⭢</code></td>
+</tr>
+<tr>
+<td>Rename window</td>
+<td><code>Ctrl + p + c</code></td>
+</tr>
+<tr>
+<td>Manager</td>
+<td><code>Ctrl + o + w</code></td>
+</tr>
+<tr>
+<td>Change Horizontal/Vertical windows</td>
+<td><code>Ctrl + Space</code></td>
+</tr>
+<tr>
+<td>Floating window</td>
+<td><code>Alt + f</code></td>
+</tr>
+<tr>
+<td>Resize window</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
 <h2>Vim</h2>
 <table>
 <thead>
@@ -1280,7 +1340,34 @@ git<span class="w"> </span>merge<span class="w"> </span>branch1
 <hr />
 <h2>Linux</h2>
 <ul>
-<li>To find current path</li>
+<li>To show information of sytem</li>
+</ul>
+<blockquote>
+<p><code>w</code> is the shortest linux command.</p>
+</blockquote>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>w
+</pre></div>
+
+<blockquote>
+<p><code>who</code> is similar to <code>w</code> command but shorter.</p>
+</blockquote>
+<ul>
+<li>
+<p>Use <code>Ctrl + r</code> to search in the history of last commands.</p>
+</li>
+<li>
+<p>To find current path</p>
+</li>
 </ul>
 <div class="code-box">
         <div class="code-info">
@@ -1554,6 +1641,346 @@ git<span class="w"> </span>merge<span class="w"> </span>branch1
             <span class="language">bash</span>
         </div>
     <pre><span></span>scp<span class="w"> </span>-r<span class="w"> </span>u0_aXXX@other-sys:test.txt<span class="w"> </span>.
+</pre></div>
+
+<h3>User Management</h3>
+<h4><strong>Users</strong></h4>
+<ul>
+<li>Adding new user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>useradd<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>Set password to new user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>passwd<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>Go to new user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>su<span class="w"> </span>-<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>Logout from user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span><span class="nb">exit</span>
+</pre></div>
+
+<ul>
+<li>Delete user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>ps<span class="w"> </span>-u<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span><span class="nb">kill</span><span class="w"> </span>-9<span class="w"> </span>&lt;PID&gt;
+sudo<span class="w"> </span>pkill<span class="w"> </span>-u<span class="w"> </span>&lt;username&gt;
+sudo<span class="w"> </span>killall<span class="w"> </span>-u<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>userdel<span class="w"> </span>-r<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>User defaults</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>useradd<span class="w"> </span>-D
+</pre></div>
+
+<blockquote>
+<p>GROUP=100</p>
+<p>HOME=/home</p>
+<p>INACTIVE=-1</p>
+<p>EXPIRE=</p>
+<p>SHELL=/bin/sh</p>
+<p>SKEL=/etc/skel</p>
+<p>CREATE_MAIL_SPOOL=no</p>
+<p>LOG_INIT=yes</p>
+</blockquote>
+<ul>
+<li>Show and edit default useradd config</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/default/useradd
+</pre></div>
+
+<ul>
+<li>Show and edit default configs</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>vim<span class="w"> </span>/etc/login.defs
+</pre></div>
+
+<h4><strong>Groups</strong></h4>
+<ul>
+<li>Show all groups</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>groups
+</pre></div>
+
+<ul>
+<li>Add new groups</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>groupadd<span class="w"> </span>&lt;group_name&gt;
+</pre></div>
+
+<ul>
+<li>Changing the group of user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-G<span class="w"> </span>&lt;new-group&gt;<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>Append the user to the supplemental GROUS </li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>usermod<span class="w"> </span>-aG<span class="w"> </span>&lt;new-group&gt;<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>Removing group from user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>groupdel<span class="w"> </span>&lt;group-name&gt;
+</pre></div>
+
+<h4><strong>Login</strong></h4>
+<ul>
+<li>Show logins</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>loginctl
+</pre></div>
+
+<ul>
+<li>Change Age (change time of stay in system)</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>chage<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<blockquote>
+<p>Can change:</p>
+<p>Minimum Password Age [0]:</p>
+<p>Maximum Password Age [99999]: </p>
+<p>Last Password Change (YYYY-MM-DD) [2025-04-30]:</p>
+<p>Password Expiration Warning [7]:</p>
+<p>Password Inactive [-1]:</p>
+<p>Acount Expiration Date (YYYY-MM-DD) [-1]:</p>
+</blockquote>
+<h4><strong>Password Manager</strong></h4>
+<ul>
+<li>Unlocking the password of an user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>passwd<span class="w"> </span>-uf<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>Locking the password af an user</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span>sudo<span class="w"> </span>passwd<span class="w"> </span>-l<span class="w"> </span>&lt;username&gt;
+</pre></div>
+
+<ul>
+<li>Changing the password with stdin</li>
+</ul>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">bash</span>
+        </div>
+    <pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>passwd<span class="w"> </span>--stdin<span class="w"> </span>&lt;username&gt;
 </pre></div>
 
 <hr />
