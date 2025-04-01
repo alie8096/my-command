@@ -1148,6 +1148,49 @@ If `umask` is `022`:
   umount /mnt
   ```
 
+### Network Management
+
+- IP Address
+
+  ```bash
+  ip a
+  ```
+
+  OR
+
+  ```bash
+  ip addr
+  ```
+
+- Show opening ports
+
+  ```bash
+  nmap <host-name>
+  ```
+
+### Time Management
+
+- show date
+
+  ```bash
+  date
+  ```
+
+- Show and setting information of system time
+
+  ```bash
+  timedatectl
+  ```
+
+- Change timezone
+
+  ```bash
+  timedatectl set-timezone Asia/Tehran
+  ```
+
+
+
+
 ---
 
 ## Emmet (HTML-CSS)
