@@ -1188,6 +1188,46 @@ If `umask` is `022`:
   timedatectl set-timezone Asia/Tehran
   ```
 
+### Process Management
+
+- Show jobs
+
+  ```bash
+  jobs
+  ```
+
+- Run process in background
+
+  ```bash
+  <app-name> &
+  ```
+
+  OR
+
+  ```bash
+  <app-name>
+^Z
+bg
+  ```
+
+- Show processes
+
+  ```bash
+  htop
+  ```
+
+- top settings
+
+  > With `space` key you can deactivate option
+
+  ```bash
+  top
+f
+  ```
+
+
+
+
 
 
 
