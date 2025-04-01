@@ -158,6 +158,37 @@ drive.mount('/content/drive/')
     ```vim
     :%s/bar/foo/g
     ```
+
+### Vim spell checker
+
+- Simple
+
+  ```vim
+  :set spell
+  ```
+
+- Spelling spacial language
+
+  ```vim
+  set spelllang=en
+  ```
+
+- Persian language spelling
+
+  ```vim
+  set spelllang=fa
+  ```
+
+- Shortcut to navigate to misspellings
+
+  | Shortcut | Description |
+  | --- | --- |
+  | ***[s*** | Go to next misspelled |
+  | ***]s*** | Go to previous misspelled word |
+  | ***z=*** | Show alternative suggestions |
+  | ***zg*** | Add word to personal directory |
+  | ***zw*** | Mark word as misspelled
+
 ### Customize vim
 
 - <a href="https://www.freecodecamp.org/news/vimrc-configuration-guide-customize-your-vim-editor/" style="font-weight: bold;" target="_blank">Customize Vim</a>
@@ -843,6 +874,232 @@ sudo killall -u <username>
   ```bash
   echo "password" | passwd --stdin <username>
   ```
+
+### Permission Management
+
+- Show status of permission of files
+
+  ```bash
+  ls -l
+  ```
+
+- File and Ownership Permissions Structure
+
+Every file and directory in Linux have three kinds of owers:
+
+  - **User (u)**: The creator of the file becomes its owner. You can change the ownership later.
+  - **Group (g)**: Users are part of specific groups.Managing users in a multi-user environment involves creating separate groups(e.g., dev team, QA Team, sysadmin team). Group membership simplifies permission management.
+  - **Other (o)**: This group includes all users on the system, even if you're the sole user. Everyone with access to the system belongs to this group.
+  - **All (a)**: All kinds (i.e., User (u), Group (g), and Other (o))
+
+Each file and directory have three permissions for all three owner types:
+
+  - **Files**
+    | **Mode** | **Abbrevation** | **Absolute Mode** | **Description** |
+    | --- | --- | --- | --- |
+    | **Read** | ***r*** | 4 | Allow viewing or copying file contents. | 
+    | **Write** | ***w*** | 2 | Permits modifying file content. |
+    | **Execution** | ***x*** | 1 | Enablesrunning executable files (scripts or programs). |
+
+  - **Directory**
+
+    | **Mode** | **Abbrevation** | **Absolute Mode** | **Description** |
+    | --- | --- | --- | --- |
+    | **Read** | ***r*** | 4 | List files and copies them from the directory. | 
+    | **Write** | ***w*** | 2 | Adds or deletes files (requires execute permission). |
+    | **Execution** | ***x*** | 1 | Allows entering the directory. |
+
+File Permissions have two modes. An absoute mode and symbolic mode. The modes detail the type of enteries required for permissions to take effect.
+
+  - **Symbolic Mode**
+
+    - Symbolic mode allows you to modify permissions based on their current state.
+
+      - **+**: Adds permissions.
+      - **-**: Removes permissions.
+      - **=**: Sets permissions explicitly.
+
+  - **Absolute Mode**
+
+    - In absolute mode, you explicitly specify the permissions using numeric value (octal notation). These values represent the combination of *read*, *write*, and *execute* permissions for the *owner*, *group*, and *others*.
+
+      | **Numeric Value** | **Mode** | **Description** |
+      | --- | --- | --- |
+      | **0** | ***---*** | No permissions |
+      | **1** | ***--x*** | Execute only |
+      | **2** | ***-w-*** | Write only |
+      | **3** | ***-wx*** | Write and execute |
+      | **4** | ***r--*** | Read only |
+      | **5** | ***r-x*** | Read and execute |
+      | **6** | ***rw-*** | Read and write |
+      | **7** | ***rwx*** | Read, write, and execute|
+
+
+  - **File Types**
+
+    | Character | File Type | How to Create | Description |
+    | --- | --- | --- | --- |
+    | **-** | Regular file | Any program that writes a file | Common files like text, code, and binaries |
+    | **b** | Block special file | `mknod` | Storage devises like disks |
+    | **c** | Character scecial file | `mknod` | Devices that read/write character data (e.g., keyboard) |
+    | **d** | Directory | `mkdir` | A folder containing files and subdirectories |
+    | **l** | Symbolic link | `ln -s` | A reference to another file or directory |
+    | **p** | Named pipe | `mkfifo` | FIFO queue for inter-process communication |
+    | **s** | Socket | `nc -U` | Network communication between processes |
+    | **D** | Door | Created by some servers | Specific to Solaris/OpenIndiana systems |
+
+
+  - **Permission Placement**
+
+      1. Type
+      2. User
+      3. Group
+      4. Other
+
+      [Permissions](./Images/Permissions.png)
+
+
+  ```bash
+  chmod ugo+rwx
+  ```
+
+  ```bash
+  chmod 770 <file/directory-name>
+  ```
+  > `chmod 770` =>
+  >
+  > user: 7 = 4 + 2 + 1 
+  >
+  > group: 7 = 4 + 2 + 1
+  >
+  > other: 0 = None
+  >
+  > -> rwxrwx---
+
+
+#### **Ownership**
+
+- Change onwnership (e.g., change onwnership of a directory to root )
+
+  ```bash
+  chown root <directory-name>
+  ```
+
+- Change group (e.g., change group of a directory)
+
+  ```bash
+  chgrp <group-name> <directory-name>
+  ```
+
+- Change ownership and group for a directory
+
+  ```bash
+  chown <ownership-name>:<group-name> <directory-name>
+  ```
+
+#### **Spacial Permissions**
+
+| Numeric Value | Mode | Description |
+| --- | --- | --- |
+| **4XXX** | **SUID** (Set User ID) | Executes the file with the owner's privileges instead of the user's. |
+| **2XXX** | **SGID** (Set Group ID) | Executes the file with the group's privileges or inhereits the directory's group. |
+| **1XXX** | **Stick Bit** | Prevents users from deleting file they don't own in shared directories. |
+
+- **SUID (4XXX)**: Runs the file eith the owner's permissions (e.g., `passwd`).
+
+  - **Set**:
+
+    ```bash
+    chmod u+s <file>
+    ```
+
+    OR
+
+    ```bash
+    chmod 4755 <file>
+    ```
+
+  - **Display**: `rwsr-xr-x`
+
+- **SGID (2XXX)**: Runs the file with the group's permission; new files in directories inherit the group.
+
+  - **Set**: 
+
+    ```bash
+    chmod g+s <dir>
+    ```
+
+    OR
+
+    ```bash
+    shmod 2755 <dir>
+    ```
+
+  - **Display (file/dir)**: `rwxr-sr-x`
+
+- **Sticky Bit (1XXX)**: Restricts file delting in shared directories (`/temp`).
+
+  - **Set**: 
+
+    ```bash
+    chmod +t <dir>
+    ```
+
+    OR
+
+    ```bash
+    chmod 1777 <dir>
+    ```
+
+  - **Display**: `rwxrwxrwt`
+
+
+- Examples
+
+| **Permission** | **Command** | **Effect** |
+| --- | --- | --- |
+| ***`-rwsr-xr-x`*** | **`chmod 4755 <file>`** | Enables SUID |
+| ***`-rwxr-sr-x`*** | **`chmod 2755 <file>`** | Enables SGID |
+| ***`drwsrwsr-x`*** | **`chmod 4775 <file>`** | Enables SGID on a directory|
+| ***`drwxrwxrwt`*** | **`chmod 1777 <file>`** | Enables Sricky Bit |
+
+
+#### **Umask (User Mask)**
+
+`umask` defines the default permissions for newly created files and directories by subtractingits value from the maximum possible permissions.
+
+- **Default Behavior**:
+
+  - **Files**: Maximum permission is ***666*** (`rw-rw-rw-`), but they **never** get execute (`x`) by default.
+  - **Directories**: Maximum permission is ***777*** (`rwxrwxrwx`).
+
+- **Example**:
+
+If `umask` is `022`:
+
+  - **Files**: `666 - 022 = 644` → *`rw-r--r--`*
+  - **Directories**: `777 - 022 = 755` → *`rwxr-xr-x`*
+
+- **Check & Set umask**:
+
+  - Check current umask:
+
+    ```bash
+    umask
+    ```
+
+  - Set umask (e.g., `027`):
+
+    ```bash
+    umask 027
+    ```
+
+    - Files → `640` ( *`rw-r-----`* )
+    - Directories → `750` ( *`rwxr-x---`* )
+
+
+> To make changes persistent, add `umask` to `~/.bashrc` or `/etc/profile`.
+
 ---
 
 ## Emmet (HTML-CSS)
@@ -1204,7 +1461,7 @@ history -w
 
 - **bash logout**
 
-  write stdout of  a command or function log whene logout bash (for example)
+  write stdout of  a command or function log when logout bash (for example)
 
   append stdout of `ls -l` command into `new_log` file
 
@@ -1263,7 +1520,7 @@ ls -l >> new_log
   # line
   ```
 
-- Multy line
+- Multi line
 
   ```sh
   : "
@@ -1402,7 +1659,7 @@ do
 done
 ```
 
-### Args
+### Arguments
 
 - Get Arguments
 
@@ -1432,7 +1689,7 @@ echo ${args[0]} ${args[1]}
   array=("item1" "item2" "item3" "item4")
   ```
 
-- Geting the data from array
+- Getting the data from array
 
   > Use **`@`** to get all elements
   >
@@ -1476,7 +1733,7 @@ func_name
   value
   ```
 
-  > Use $? to get numeric reterned vale
+  > Use $? to get numeric returned vale
 
   ```sh
   func_name() {
