@@ -1100,6 +1100,54 @@ If `umask` is `022`:
 
 > To make changes persistent, add `umask` to `~/.bashrc` or `/etc/profile`.
 
+
+### Partitioning
+
+
+- Show parthtion for GPT
+
+  ```bash
+  gdisk /dev/sda
+  ```
+
+- Show partition for MBR
+
+  ```bash
+  fdisk /dev/sda
+  ```
+
+- Show partition graphicaly
+
+  ```bash
+  cfdisk /dev/sda
+  ```
+
+- Show partition graphicaly for GPT
+
+  ```bash
+  cgdisk /dev/sda
+  ```
+
+### Mount & Unmount
+
+- Mount `sdb1` on the `/mnt`
+
+  ```bash
+  mount /dev/sdb1 /mnt/
+  ```
+
+- Show open process in `/mnt`
+
+  ```bash
+  lsof /mnt/
+  ```
+
+- Unmaount `/mnt`
+
+  ```bash
+  umount /mnt
+  ```
+
 ---
 
 ## Emmet (HTML-CSS)
