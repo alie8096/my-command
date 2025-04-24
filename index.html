@@ -2887,6 +2887,626 @@ sudo<span class="w"> </span>killall<span class="w"> </span>-u<span class="w"> </
 f
 </pre></div>
 
+<h3>Install Arch Linux</h3>
+<ol>
+<li>Install dependencies</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>pacman<span class="w"> </span>-Syyy
+</pre></div>
+
+<ol>
+<li>Install <strong><em>reflector</em></strong> package for find near mirror</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>pacman<span class="w"> </span>-S<span class="w"> </span>reflector
+</pre></div>
+
+<blockquote>
+<p><strong><em>Hint</em></strong>: If get an error, use <code>pacman-key --init</code></p>
+</blockquote>
+<ol>
+<li>Find and update nearest mirror list</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Flags</th>
+<th>Argument</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-c</code></td>
+<td>country name</td>
+<td>Country name</td>
+</tr>
+<tr>
+<td><code>-a</code></td>
+<td>age</td>
+<td>last update of mirror</td>
+</tr>
+<tr>
+<td><code>--sort</code></td>
+<td>rate</td>
+<td>Sorting by rate</td>
+</tr>
+<tr>
+<td><code>--save</code></td>
+<td>file path</td>
+<td>Save mirrors to use from its</td>
+</tr>
+</tbody>
+</table>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>reflector<span class="w"> </span>-c<span class="w"> </span>Iran<span class="w"> </span>-a<span class="w"> </span><span class="m">6</span><span class="w"> </span>--sort<span class="w"> </span>rate<span class="w"> </span>--save<span class="w"> </span>/etc/pacman.d/mirrorlist
+</pre></div>
+
+<ol>
+<li>Partitioning</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>cfdisk<span class="w"> </span>/dev/sda
+</pre></div>
+
+<ol>
+<li>Select <strong><em>gpt</em></strong></li>
+<li>Create space <strong><em>300M</em></strong> (300MiB)</li>
+<li>Select type <strong><em>EFI System</em></strong></li>
+<li>New space for root with type <strong><em>Linux filesystem</em></strong></li>
+<li>New space for home with type <strong><em>Linux filesystem</em></strong></li>
+<li>New space for swap with type <strong><em>Linux swap</em></strong></li>
+<li>Write partitioning and <strong><em>yes</em></strong> and  <strong><em>Quit</em></strong></li>
+<li>
+<p>Check partitioning </p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>lsblk
+</pre></div></p>
+</li>
+<li>
+<p>Making file system</p>
+</li>
+<li>
+<p>Making <code>boot</code> drive</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mkfs.fat<span class="w"> </span>-F<span class="w"> </span>/dev/sda1
+</pre></div></p>
+</li>
+<li>
+<p>Making <code>root</code> drive</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mkfs.ext4<span class="w"> </span>/dev/sda2
+</pre></div></p>
+</li>
+<li>
+<p>Making <code>home</code> drive</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mkfs.ext4<span class="w"> </span>/dev/sda3
+</pre></div></p>
+</li>
+<li>
+<p>Making <code>swap</code> drive</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mkswap<span class="w"> </span>/dev/sda4
+</pre></div></p>
+</li>
+<li>
+<p>Mounting </p>
+</li>
+<li>
+<p>Mounting swap</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>swapon<span class="w"> </span>/dev/sda4
+</pre></div></p>
+</li>
+<li>
+<p>Mounting <code>/dev/sda2</code> in <code>/mnt</code> (root)</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mount<span class="w"> </span>/dev/sda2<span class="w"> </span>/mnt
+</pre></div></p>
+<ul>
+<li>Making the directories for <code>/home</code> &amp; <code>/boot</code></li>
+</ul>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mkdir<span class="w"> </span>/mnt/home<span class="w"> </span>/mnt/boot
+</pre></div></p>
+</li>
+<li>
+<p>Mounting <code>/dev/sda1</code> in <code>/mnt/boot</code> (boot)</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mount<span class="w"> </span>/dev/sda1<span class="w"> </span>/mnt/boot
+</pre></div></p>
+</li>
+<li>
+<p>Mounting <code>/dev/sda3</code> in <code>/mnt/home</code> (home)</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>mount<span class="w"> </span>/dev/sda3<span class="w"> </span>/mnt/home
+</pre></div></p>
+</li>
+<li>
+<p>Install requirements software</p>
+</li>
+<li>
+<p>ّInstall dependencies in <code>/mnt</code> path</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>pacstrap<span class="w"> </span>/mnt<span class="w"> </span>base<span class="w"> </span>linux<span class="w"> </span>linux-firmware<span class="w"> </span>vim<span class="w"> </span>tmux
+</pre></div></p>
+</li>
+<li>
+<p>Generate file system table</p>
+</li>
+<li>
+<p>This command extracts the mounted partitions in <code>/mnt</code> using their <strong>UUIDs</strong>and writes the info to <code>/mnt/etc/fstab</code>, so the installed system can properly identify and mount them at boot--even if their device names change.</p>
+</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>genfstab<span class="w"> </span>-U<span class="w"> </span>/mnt<span class="w"> </span>&gt;&gt;<span class="w"> </span>/mnt/etc/fstab
+</pre></div>
+
+<ol>
+<li>
+<p>Switching to Arch Linux</p>
+</li>
+<li>
+<p>The command switches into the installed system at <code>/mnt</code>, allowing you to configure it as if you had booted directly into it.</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>arch-chroot<span class="w"> </span>/mnt
+</pre></div></p>
+</li>
+<li>
+<p>Select timezone</p>
+</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>ln<span class="w"> </span>-sf<span class="w"> </span>/usr/share/Zoneinfo/Asia/Tehran<span class="w"> </span>/etc/localtime
+hwclock<span class="w"> </span>--systohc
+</pre></div>
+
+<ol>
+<li>
+<p>Select system language</p>
+</li>
+<li>
+<p>Select and set language</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>vim<span class="w"> </span>/etc/locale.gen
+</pre></div></p>
+<blockquote>
+<p>Uncommenting the <code>en_US.UTF-8 UTF-8</code> and saving an exit</p>
+</blockquote>
+</li>
+<li>
+<p>Generate language</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>locale-gen
+</pre></div></p>
+</li>
+<li>
+<p>Configuration</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;LANG=en_US.UTF-8&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/locale.conf
+</pre></div></p>
+</li>
+<li>
+<p>Create hostname for system</p>
+</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;My-Hostname&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/hostname
+</pre></div>
+
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;127.0.0.1    localhost</span>
+<span class="s2">::1        localhost</span>
+<span class="s2">127.0.1.1    ArchLinux.localdomain ArchLinux&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/hosts
+</pre></div>
+
+<ol>
+<li>Create password for root</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>passwd
+</pre></div>
+
+<ol>
+<li>Update system and packages</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>pacman<span class="w"> </span>-Syyy
+pacman<span class="w"> </span>-Syu
+</pre></div>
+
+<ol>
+<li>Install requires packages</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>pacman<span class="w"> </span>-S<span class="w"> </span>grub<span class="w"> </span>efibootmgr<span class="w"> </span>networkmanager<span class="w"> </span>network-manager-applet<span class="w"> </span>dialog<span class="w"> </span>wpa_supplicant<span class="w"> </span>mtools<span class="w"> </span>dosfstools<span class="w"> </span>base-devel<span class="w"> </span>linux-headers<span class="w"> </span>xdg-user-dirs<span class="w"> </span>xdg-utils<span class="w"> </span>nfs-utils<span class="w"> </span>bluez<span class="w"> </span>bluez-utils<span class="w"> </span>pipewire<span class="w"> </span>pipewire-alsa<span class="w"> </span>pipewire-pluse<span class="w"> </span>pipewire-jack<span class="w"> </span>bash-completion<span class="w"> </span>openssh<span class="w"> </span>reflector<span class="w"> </span>os-prober<span class="w"> </span>tmux<span class="w"> </span>vim<span class="w"> </span>htop
+</pre></div>
+
+<ol>
+<li>Install grub</li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>grub-install<span class="w"> </span>--target<span class="o">=</span>x86_64-efi<span class="w"> </span>--efi-directory<span class="o">=</span>/boot<span class="w"> </span>--bootloader-id<span class="o">=</span>GRUB
+</pre></div>
+
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>grub-mkconfig<span class="w"> </span>-o<span class="w"> </span>/boot/grub/grub.cfg
+</pre></div>
+
+<ol>
+<li>Enables required packages </li>
+</ol>
+<div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>NetworkManager
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>bluetooth
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>reflector.timer
+</pre></div>
+
+<ol>
+<li>
+<p>Adding user</p>
+</li>
+<li>
+<p>Add user
+    <div class="code-box">
+        <div class="code-info">
+            <div class="code-icon">
+                <button class="copy-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                    <span>Copy code</span>
+                </button>
+            </div>
+            <span class="language">zsh</span>
+        </div>
+    <pre><span></span>useradd<span class="w"> </span>-m<span class="w"> </span>&lt;username&gt;
+</pre></div></p>
+</li>
+<li>
+<p>Add password for user</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>passwd<span class="w"> </span>&lt;username&gt;
+</pre></div></p>
+</li>
+<li>
+<p>Add user to <code>wheel</code> group</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>usermod<span class="w"> </span>-aG<span class="w"> </span>wheel<span class="w"> </span>&lt;username&gt;
+</pre></div></p>
+</li>
+<li>
+<p>Add user privilege specification</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span><span class="c1">##</span>
+<span class="w">    </span><span class="c1">## User privilage specification</span>
+<span class="w">    </span><span class="c1">##</span></p>
+</li>
+</ol>
+<p><span class="w">    </span>root<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+<span class="w">    </span>&lt;username&gt;<span class="w"> </span><span class="nv">ALL</span><span class="o">=(</span>ALL:ALL<span class="o">)</span><span class="w"> </span>ALL
+</pre></div></p>
+<ul>
+<li>
+<p>Exit</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span><span class="nb">exit</span>
+</pre></div></p>
+</li>
+<li>
+<p>Umount and reboot system</p>
+<p><div class="code-box">
+    <div class="code-info">
+        <div class="code-icon">
+            <button class="copy-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" class="icon-sm"><path fill="currentColor" fill-rule="evenodd" d="M7 5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-2v2a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3h2zm2 2h5a3 3 0 0 1 3 3v5h2a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-9a1 1 0 0 0-1 1zM5 9a1 1 0 0 0-1 1v9a1 1 0 0 0 1 1h9a1 1 0 0 0 1-1v-9a1 1 0 0 0-1-1z" clip-rule="evenodd"></path></svg>
+                <span>Copy code</span>
+            </button>
+        </div>
+        <span class="language">zsh</span>
+    </div>
+<pre><span></span>umount<span class="w"> </span>-a
+reboot
+</pre></div></p>
+</li>
+</ul>
 <hr />
 <h2>Emmet (HTML-CSS)</h2>
 <h3>HTML</h3>
