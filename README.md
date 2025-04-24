@@ -1227,10 +1227,257 @@ f
 
 
 
+### Install Arch Linux
+
+1. Install dependencies
+
+  ```zsh
+  pacman -Syyy
+  ```
+
+2. Install ***reflector*** package for find near mirror
+
+  ```zsh
+  pacman -S reflector
+  ```
+
+  > ***Hint***: If get an error, use `pacman-key --init`
+
+3. Find and update nearest mirror list
+
+  | Flags | Argument | Description |
+  | --- | --- | --- |
+  | `-c` | country name | Country name |
+  | `-a` | age | last update of mirror |
+  | `--sort` | rate | Sorting by rate |
+  | `--save` | file path | Save mirrors to use from its |
+
+  ```zsh
+  reflector -c Iran -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+  ```
+
+4. Partitioning
+
+  ```zsh
+  cfdisk /dev/sda
+  ```
+
+  1. Select ***gpt***
+  2. Create space ***300M*** (300MiB)
+  3. Select type ***EFI System***
+  4. New space for root with type ***Linux filesystem***
+  5. New space for home with type ***Linux filesystem***
+  6. New space for swap with type ***Linux swap***
+  7. Write partitioning and ***yes*** and  ***Quit***
+  8. Check partitioning 
+
+    ```zsh
+    lsblk
+    ```
+
+5. Making file system
+
+  - Making `boot` drive
+ 
+    ```zsh
+    mkfs.fat -F /dev/sda1
+    ```
+
+  - Making `root` drive
+
+    ```zsh
+    mkfs.ext4 /dev/sda2
+    ```
+
+  - Making `home` drive
+
+    ```zsh
+    mkfs.ext4 /dev/sda3
+    ```
+
+  - Making `swap` drive
+
+    ```zsh
+    mkswap /dev/sda4
+    ```
+
+6. Mounting 
+
+  - Mounting swap
+
+    ```zsh
+    swapon /dev/sda4
+    ```
+
+  - Mounting `/dev/sda2` in `/mnt` (root)
+
+    ```zsh
+    mount /dev/sda2 /mnt
+    ```
+
+    - Making the directories for `/home` & `/boot`
+
+      ```zsh
+      mkdir /mnt/home /mnt/boot
+      ```
+
+  - Mounting `/dev/sda1` in `/mnt/boot` (boot)
+
+    ```zsh
+    mount /dev/sda1 /mnt/boot
+    ```
+
+  - Mounting `/dev/sda3` in `/mnt/home` (home)
+
+    ```zsh
+    mount /dev/sda3 /mnt/home
+    ```
+
+7. Install requirements software
+
+  - ّInstall dependencies in `/mnt` path
+
+    ```zsh
+    pacstrap /mnt base linux linux-firmware vim tmux
+    ```
+
+8. Generate file system table
 
 
+  - This command extracts the mounted partitions in `/mnt` using their **UUIDs**and writes the info to `/mnt/etc/fstab`, so the installed system can properly identify and mount them at boot--even if their device names change.
 
+  ```zsh
+  genfstab -U /mnt >> /mnt/etc/fstab
+  ```
 
+9. Switching to Arch Linux
+
+  - The command switches into the installed system at `/mnt`, allowing you to configure it as if you had booted directly into it.
+
+    ```zsh
+    arch-chroot /mnt
+    ```
+
+10. Select timezone
+
+  ```zsh
+  ln -sf /usr/share/Zoneinfo/Asia/Tehran /etc/localtime
+hwclock --systohc
+  ```
+
+11. Select system language
+
+  - Select and set language
+
+    ```zsh
+    vim /etc/locale.gen
+    ```
+
+    > Uncommenting the `en_US.UTF-8 UTF-8` and saving an exit
+
+  - Generate language
+
+    ```zsh
+    locale-gen
+    ```
+
+  - Configuration
+
+    ```zsh
+    echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+    ```
+
+12. Create hostname for system
+
+  ```zsh
+  echo "My-Hostname" > /etc/hostname
+  ```
+
+  ```zsh
+  echo "127.0.0.1    localhost
+::1        localhost
+127.0.1.1    ArchLinux.localdomain ArchLinux" >> /etc/hosts
+  ```
+
+13. Create password for root
+
+  ```zsh
+  passwd
+  ```
+
+14. Update system and packages
+
+  ```zsh
+  pacman -Syyy
+pacman -Syu
+  ```
+
+15. Install requires packages
+
+  ```zsh
+  pacman -S grub efibootmgr networkmanager network-manager-applet dialog wpa_supplicant mtools dosfstools base-devel linux-headers xdg-user-dirs xdg-utils nfs-utils bluez bluez-utils pipewire pipewire-alsa pipewire-pluse pipewire-jack bash-completion openssh reflector os-prober tmux vim htop
+  ```
+
+16. Install grub
+
+  ```zsh
+  grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+  ```
+
+  ```zsh
+  grub-mkconfig -o /boot/grub/grub.cfg
+  ```
+
+17. Enables required packages 
+
+  ```zsh
+  systemctl enable NetworkManager
+systemctl enable bluetooth
+systemctl enable reflector.timer
+  ```
+
+18. Adding user
+
+  - Add user
+    ```zsh
+    useradd -m <username>
+    ```
+
+  - Add password for user
+
+    ```zsh
+    passwd <username>
+    ```
+
+  - Add user to `wheel` group
+
+    ```zsh
+    usermod -aG wheel <username>
+    ```
+
+  - Add user privilege specification
+
+    ```zsh
+    ##
+    ## User privilage specification
+    ##
+
+    root ALL=(ALL:ALL) ALL
+    <username> ALL=(ALL:ALL) ALL
+    ```
+
+  - Exit
+
+    ```zsh
+    exit
+    ```
+
+  - Umount and reboot system
+
+    ```zsh
+    umount -a
+reboot
+    ```
 ---
 
 ## Emmet (HTML-CSS)
