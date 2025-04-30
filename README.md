@@ -1478,6 +1478,52 @@ systemctl enable reflector.timer
     umount -a
 reboot
     ```
+
+19. Install graphical environment
+
+  - **Install KDE**
+
+    ```zsh
+    sudo timedatectl set-ntp true
+    ```
+
+    ```zsh
+    sudo hwclock --systohc
+    ```
+
+    ```zsh
+    sudo pacman -Syyy
+    ```
+
+    ```zsh
+    sudo reflector -c Iran -a 6 --sort rate --save /etc/pacman.d/mirrorlist
+    ```
+
+    ```zsh
+    sudo pacman -S xorg sddn plasma kde-applications firefox chromium
+    ```
+
+    ```zsh
+    sudo reboot
+    ```
+
+    ```zsh
+    sudo pacman -S xf86-video-vmware
+    ```
+
+    ```zsh
+    sudo reboot
+    ```
+
+  - **Install GNOME**
+
+    ```zsh
+    sudo pacman -S gnome gnome-extra gnome-tweaks
+    ```
+
+    ```zsh
+    sudo pacman -S archlinux-wallpaper
+    ```
 ---
 
 ## Emmet (HTML-CSS)
