@@ -1,3 +1,5 @@
+<p style="text-align: center; font-size: 24px; font-weight: bold;">In the name of God</p>
+
 # my-command
 
 ## Cheatsheets
@@ -6,6 +8,19 @@
 
 - <a href="https://www.howtogeek.com/307701/how-to-customize-and-colorize-your-bash-prompt/" style="font-size: 2rem; font-weight: bold;" target="_blank">Customize Bash</a>
 
+---
+
+## Terminal
+
+- Show tabular file in terminal
+
+  ```bash
+  column -s, -t < your_file.csv | less -#2 -N -S
+  ```
+
+  - `-s` separate by (,)
+  - `t` show as a table
+  - `less` to better display
 
 ---
 
