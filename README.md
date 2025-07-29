@@ -116,7 +116,9 @@ drive.mount('/content/drive/')
 | Manager | ``Ctrl + o + w`` |
 | Change Horizontal/Vertical windows | ``Ctrl + Space`` |
 | Floating window | ``Alt + f`` |
-| Resize window | 
+| Resize window |
+| New Tab | ``Ctrl + b + c`` |
+| Move a pane to another tab | ``select pane`` ``Ctrl + t + []`` |
 
 ---
 
